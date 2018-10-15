@@ -1,0 +1,35 @@
+nav {
+  border-right: 1px solid #D1D5DA;
+}
+nav h5 {
+  border-bottom: 1px solid #D1D5DA;
+  padding-bottom: 0.3em;
+  font-size: 1rem;
+}
+nav h6 {
+  margin: 2px 0;
+  font-size: 0.8rem;
+}
+#sidebar-title img {
+  background-color: #733B89;
+}
+.sidebar-title {
+  font-size: 14px;
+}
+/* ============================================================================================
+/* ============================================================================================
+   Large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px) {
+  nav {
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+}

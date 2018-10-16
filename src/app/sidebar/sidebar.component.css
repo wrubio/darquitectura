@@ -1,5 +1,10 @@
 nav {
-  border-right: 1px solid #D1D5DA;
+  border-right: 1px solid #733B89;
+  background-color: #733B89;
+  -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
+  color: #FFFFFF;
 }
 nav h5 {
   border-bottom: 1px solid #D1D5DA;
@@ -12,9 +17,49 @@ nav h6 {
 }
 #sidebar-title img {
   background-color: #733B89;
+  margin-bottom: 20px;
 }
 .sidebar-title {
   font-size: 14px;
+}
+#sidebar-menu {
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#sidebar-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#sidebar-menu li {
+  cursor: pointer;
+  height: 42px;
+  overflow: hidden;
+  -webkit-transition: height 0.4s ease;
+  -moz-transition: height 0.4s  ease;
+  -o-transition: height 0.4s  ease;
+  -ms-transition: height 0.4s  ease;
+  transition: height 0.4s  ease;
+}
+#sidebar-menu li:focus, #sidebar-menu li:active, #sidebar-menu li:visited {
+  border: none;
+  outline: none;
+}
+.sidebar-arrow {
+  float: right;
+}
+#sidebar-menu li:not(:last-child) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 6px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.side-sublinks {
+  padding-left: 15px;
+  clear: both;
 }
 /* ============================================================================================
 /* ============================================================================================
@@ -26,10 +71,12 @@ nav h6 {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 25px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-
+  #sidebar-title {
+    text-align: center;
+    padding: 25px;
+  }
 }

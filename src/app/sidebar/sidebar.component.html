@@ -1,46 +1,51 @@
 <nav>
+
   <div id="sidebar-title">
+    <img src="./assets/img/logo.svg" alt="Nidoo logo">
     <h5>DOCUMENTO DE ARQUITECTURA</h5>
-    <h6>SAD V. 1.0</h6>
-    <h6>201820-Repo-Grupo-03</h6>
-    <h6>Cliente: NIDOO</h6>
-    <h6>Universidad De Los Andes</h6>
-    <h6>Facultad De Ingeniería</h6>
-    <h6>15/10/2018</h6>
-    <!-- -->
   </div>
-  <hr>
+
+  <hr style="border-top: 1px solid rgba(0, 0, 0, 0.25);">
+
   <div id="sidebar-menu">
     <h5>Menu principal</h5>
     <ul>
-      <li routerLink="">
+      <li class="p-link" routerLink="">
         <span class="sidebar-title">Home</span>
       </li>
-      <li routerLink="/introduction" >
+      <li class="p-link"  routerLink="/introduction" >
         <span class="sidebar-title">1. Introducción</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">2. Tabla De Cambios</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">3. Representación Arquitectónica</span>
+        <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+        <div class="side-sublinks">
+          <ul>
+            <li><span class="sidebar-title">algo 01</span></li>
+            <li><span class="sidebar-title">algo 02</span></li>
+            <li><span class="sidebar-title">algo 03</span></li>
+          </ul>
+        </div>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">4. Restricciones</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">5. Vistas De Arquitectura</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">6. Modelos De Arquitectura</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">7. Estilos y Tácticas De Arquitectura</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">8. Experimentos y Resultados</span>
       </li>
-      <li>
+      <li class="p-link" >
         <span class="sidebar-title">9. Sprints </span>
       </li>
     </ul>

@@ -16,6 +16,9 @@ const appRoutes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    data: {
+      breadcrumb: 'Home'
+    },
     children: [
       {
         path: '', component: HomeComponent,

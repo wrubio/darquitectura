@@ -1,4 +1,75 @@
 #container {}
+#smallDevice-menu {
+  display: none;
+}
+#breadcrumb {
+  position: fixed;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 52px;
+  border-bottom: 1px solid #D1D5DA;
+  z-index: 2;
+  background-color: #F8F9FA;
+}
+@media only screen and (max-width: 768px) {
+  #smallDevice-menu {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 30;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 52px;
+    width: 52px;
+    background-color: #733B89;
+    color: #FFFFFF;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.75);
+    -moz-transition: left 0.2s  ease;
+    -o-transition: left 0.2s  ease;
+    -ms-transition: left 0.2s  ease;
+    transition: left 0.2s  ease;
+  }
+  #breadcrumb {
+    width: calc(100% - 52px);
+    top: 0;
+    left: 52px;
+  }
+  #container {
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 52px 0 0 0;
+  }
+  #header-document {
+    height: 350px;
+    text-align: center;
+    /* background-color: #733B89; */
+    background-color: #9a969c;
+    padding-top: 20px;
+    background-image: url("../../assets/img/pattern.png");
+    background-repeat: repeat;
+  }
+  #document {
+    width: 94%;
+    border: 1px solid #D1D5DA;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin: -320px auto 0 auto;
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(113,113,113,0.75);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(113,113,113,0.75);
+    box-shadow: 0px 0px 3px 0px rgba(113,113,113,0.75);
+    padding: 25px;
+  }
+}
 /* ============================================================================================
 /* ============================================================================================
    Large devices (large laptops and desktops, 1200px and up) */
@@ -13,16 +84,8 @@
   }
   #breadcrumb {
     width: calc(100% - 320px);
-    position: fixed;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
     top: 0;
     left: 320px;
-    height: 52px;
-    border-bottom: 1px solid #D1D5DA;
-    z-index: 2;
-    background-color: #F8F9FA;
   }
   #header-document {
     height: 350px;

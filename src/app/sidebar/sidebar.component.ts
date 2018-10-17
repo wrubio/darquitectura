@@ -52,6 +52,16 @@ export class SidebarComponent implements OnInit {
       }
       e.stopPropagation();
     }));
+    // *********************************************************************************************
+    // ** LI Collapse sidebar event
+    // *********************************************************************************************
+    const toggleBottom = document.getElementById('smallDevice-menu');
+    const navElement = document.querySelector('nav');
+    toggleBottom.addEventListener('click', e => {
+      navElement.style.width = navElement.offsetWidth === 0 ? '320px' : '0';
+      toggleBottom.style.left = toggleBottom.style.left=== '' ? '320px' : '';
+      console.log(navElement.offsetWidth, toggleBottom.style.left);
+    })
   }
 
 }

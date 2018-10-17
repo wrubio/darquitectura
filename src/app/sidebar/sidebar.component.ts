@@ -11,6 +11,8 @@ export class SidebarComponent implements OnInit {
   }
 
   ngOnInit() {
+    const toggleBottom = document.getElementById('smallDevice-menu');
+    const navElement = document.querySelector('nav');
     // *********************************************************************************************
     // ** LI Collapse sidebar event
     // *********************************************************************************************
@@ -21,6 +23,7 @@ export class SidebarComponent implements OnInit {
     containerSideBar.map(navs => navs.addEventListener('click', e => {
       const liSelector = e.target.nodeName === 'LI' ? containerSideBar.indexOf(e.target) : containerSideBar.indexOf(e.target.closest('li'));
       const liElement = containerSideBar[liSelector];
+      console.log(e);
       if (liElement.childNodes.length === 3){
         const subMenuElement = liElement.childNodes[2];
         const arrowElement = liElement.childNodes[1];
@@ -50,18 +53,26 @@ export class SidebarComponent implements OnInit {
           liElement.style.height = liElementHeight === 42 ? (subMenuElementHeight + 62) + 'px' : '42px';
         }
       }
+
+      const routerLinkAttr = liElement.hasAttribute('routerLink');
+      if (window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(max-width: 460px)").matches) {
+        if (routerLinkAttr) {
+          navElement.style.width = '';
+          toggleBottom.style.left = '';
+        }
+      }
       e.stopPropagation();
     }));
     // *********************************************************************************************
-    // ** LI Collapse sidebar event
+    // ** Sidebar mobile events
     // *********************************************************************************************
-    const toggleBottom = document.getElementById('smallDevice-menu');
-    const navElement = document.querySelector('nav');
     toggleBottom.addEventListener('click', e => {
-      navElement.style.width = navElement.offsetWidth === 0 ? '320px' : '0';
+      navElement.style.width = navElement.offsetWidth === 0 ? '320px' : '';
       toggleBottom.style.left = toggleBottom.style.left=== '' ? '320px' : '';
-      console.log(navElement.offsetWidth, toggleBottom.style.left);
     })
+    // *********************************************************************************************
+    // ** Sidebar mobile events
+    // *********************************************************************************************
   }
 
 }

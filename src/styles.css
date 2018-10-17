@@ -78,11 +78,11 @@ td {
 }
 @media only screen and (max-width: 460px) {
   th {
-    font-size: 12px;
+    font-size: 11px;
   }
   td {
     border: 1px solid #D1D5DA;
-    font-size: 11px;
+    font-size: 10px;
   }
   .title-separator {
     margin: 20px 0;

@@ -10,6 +10,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { IntroductionComponent } from './introduction/introduction.component';
+import { TableChangeComponent } from './table-change/table-change.component';
+import { RestrictionsComponent } from './restrictions/restrictions.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +33,18 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Introducción'
         }
+      },
+      {
+        path: 'tableOfChanges', component: TableChangeComponent,
+        data: {
+          breadcrumb: 'Tabla De Cambios'
+        }
+      },
+      {
+        path: 'restrictions', component: RestrictionsComponent,
+        data: {
+          breadcrumb: 'Restricciones'
+        }
       }
     ],
   }
@@ -42,12 +56,15 @@ const appRoutes: Routes = [
     LayoutComponent,
     HomeComponent,
     SidebarComponent,
-    IntroductionComponent
+    IntroductionComponent,
+    TableChangeComponent,
+    RestrictionsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      {scrollPositionRestoration: 'enabled'}
     ),
     BreadcrumbsModule,
     NgbModule

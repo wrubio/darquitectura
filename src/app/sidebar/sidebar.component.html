@@ -5,10 +5,9 @@
     <h5>DOCUMENTO DE ARQUITECTURA</h5>
   </div>
 
-  <hr style="border-top: 1px solid rgba(0, 0, 0, 0.25);">
+  <hr style="border-top: 1px solid rgba(0, 0, 0, 0.25); margin: 0;">
 
   <div id="sidebar-menu">
-    <h5>Menu principal</h5>
     <ul>
       <li class="p-link" routerLink="">
         <span class="sidebar-title">Home</span>
@@ -16,37 +15,204 @@
       <li class="p-link"  routerLink="/introduction" >
         <span class="sidebar-title">1. Introducción</span>
       </li>
-      <li class="p-link" >
+      <li class="p-link" routerLink="/tableOfChanges">
         <span class="sidebar-title">2. Tabla De Cambios</span>
       </li>
+      <li class="p-link" routerLink="/restrictions">
+        <span class="sidebar-title">3. Restricciones</span>
+      </li>
       <li class="p-link" >
-        <span class="sidebar-title">3. Representación Arquitectónica</span>
+        <span class="sidebar-title">4. ASRs</span>
         <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
         <div class="side-sublinks">
           <ul>
-            <li><span class="sidebar-title">algo 01</span></li>
-            <li><span class="sidebar-title">algo 02</span></li>
-            <li><span class="sidebar-title">algo 03</span></li>
+            <li><span class="sidebar-title">4.1. Atributos de calidad</span></li>
+            <li><span class="sidebar-title">4.2. Historias de usuario</span></li>
+            <li><span class="sidebar-title">4.3. ASR</span></li>
+            <li><span class="sidebar-title">4.4. Priorización de ASRs</span></li>
+          </ul>
+        </div>
+      </li>
+      <li class="p-link level1">
+        <span class="sidebar-title">5. Vistas De Arquitectura</span>
+        <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+        <div class="side-sublinks">
+          <ul>
+            <li class="p-link"><span class="sidebar-title">5.1. Vista De Contexto</span></li>
+            <li class="p-link level2">
+              <span class="sidebar-title">5.2. Vista De Funcionalidad</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">5.2.1. General</span></li>
+                  <li><span class="sidebar-title">5.2.2. Search Microservice</span></li>
+                  <li><span class="sidebar-title">5.2.3. Booking Microservice</span></li>
+                  <li><span class="sidebar-title">5.2.4. Payments Microservice</span></li>
+                  <li><span class="sidebar-title">5.2.5. User Miscroservice</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2" >
+              <span class="sidebar-title">5.3. Vista De Información</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">5.3.1. General</span></li>
+                  <li><span class="sidebar-title">5.3.2. Search Microservice</span></li>
+                  <li><span class="sidebar-title">5.3.3. Booking Microservice</span></li>
+                  <li><span class="sidebar-title">5.3.4. Payments Microservice</span></li>
+                  <li><span class="sidebar-title">5.3.5. User Miscroservice</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">5.4. Vista De Concurrencia</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">5.4.1. General</span></li>
+                  <li><span class="sidebar-title">5.4.2. Search Microservice</span></li>
+                  <li><span class="sidebar-title">5.4.3. Booking Microservice</span></li>
+                  <li><span class="sidebar-title">5.4.4. Payments Microservice</span></li>
+                  <li><span class="sidebar-title">5.4.5. User Miscroservice</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">5.5. Vista De Despliegue</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">5.5.1. General</span></li>
+                  <li><span class="sidebar-title">5.5.2. Search Microservice</span></li>
+                  <li><span class="sidebar-title">5.5.3. Booking Microservice</span></li>
+                  <li><span class="sidebar-title">5.5.4. Payments Microservice</span></li>
+                  <li><span class="sidebar-title">5.5.5. User Miscroservice</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="p-link level1">
+        <span class="sidebar-title">6. Vistas Por Microservicios</span>
+        <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+        <div class="side-sublinks">
+          <ul>
+            <li class="p-link"><span class="sidebar-title">6.1. General</span></li>
+            <li class="p-link level2">
+              <span class="sidebar-title">6.2. Search Microservice</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">6.2.1. Vista Funcional</span></li>
+                  <li><span class="sidebar-title">6.2.2. Vista De Despliegue</span></li>
+                  <li><span class="sidebar-title">6.2.3. Vista De Información</span></li>
+                  <li><span class="sidebar-title">6.2.4. Vista De Concurrencia</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">6.3. Booking Microservice</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">6.3.1. Vista Funcional</span></li>
+                  <li><span class="sidebar-title">6.3.2. Vista De Despliegue</span></li>
+                  <li><span class="sidebar-title">6.3.3. Vista De Información</span></li>
+                  <li><span class="sidebar-title">6.3.4. Vista De Concurrencia</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">6.4. Payments Microservice</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">6.4.1. Vista Funcional</span></li>
+                  <li><span class="sidebar-title">6.4.2. Vista De Despliegue</span></li>
+                  <li><span class="sidebar-title">6.4.3. Vista De Información</span></li>
+                  <li><span class="sidebar-title">6.4.4. Vista De Concurrencia</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">5.5. User Miscroservice</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">6.4.1. Vista Funcional</span></li>
+                  <li><span class="sidebar-title">6.4.2. Vista De Despliegue</span></li>
+                  <li><span class="sidebar-title">6.4.3. Vista De Información</span></li>
+                  <li><span class="sidebar-title">6.4.4. Vista De Concurrencia</span></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="p-link level1" >
+        <span class="sidebar-title">7. Sprints</span>
+        <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+        <div class="side-sublinks">
+          <ul>
+            <li class="p-link level2">
+              <span class="sidebar-title">7.1. Sprint 0 - Visión De Arquitectura</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">7.1.1. Restricciones Del Proyecto</span></li>
+                  <li><span class="sidebar-title">7.1.2. Historia De Arquitecturas</span></li>
+                  <li><span class="sidebar-title">7.1.3. ASRs</span></li>
+                  <li><span class="sidebar-title">7.1.3. Priorización De ASRs</span></li>
+                  <li><span class="sidebar-title">7.1.4. Diseños De Arquitectura</span></li>
+                  <li><span class="sidebar-title">7.1.5. Retrospectiva</span></li>
+                  <li><span class="sidebar-title">7.1.6. Video Sprint 0</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">7.2. Sprint 1 - Latencia</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">7.2.1. ASRs Consideradas</span></li>
+                  <li><span class="sidebar-title">7.2.2. Diseño De La Arquitectura</span></li>
+                  <li><span class="sidebar-title">7.2.3. Decisiones Críticas De Diseño</span></li>
+                  <li><span class="sidebar-title">7.2.4. Estilos y Tácticas</span></li>
+                  <li><span class="sidebar-title">7.2.5. Diseño De La Experimentación</span></li>
+                  <li><span class="sidebar-title">7.2.6. Resultados Del Experimento</span></li>
+                  <li><span class="sidebar-title">7.2.7. Análisis y Conclusiones</span></li>
+                  <li><span class="sidebar-title">7.2.8. Retrospectiva</span></li>
+                  <li><span class="sidebar-title">7.2.9. Video Sprint 1</span></li>
+                </ul>
+              </div>
+            </li>
+            <li class="p-link level2">
+              <span class="sidebar-title">7.3. Sprint 2 - Escalabilidad</span>
+              <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
+              <div class="side-sublinks sub-level2">
+                <ul>
+                  <li><span class="sidebar-title">7.3.1. ASRs Consideradas</span></li>
+                  <li><span class="sidebar-title">7.3.2. Diseño De La Arquitectura</span></li>
+                  <li><span class="sidebar-title">7.3.3. Decisiones Críticas De Diseño</span></li>
+                  <li><span class="sidebar-title">7.3.4. Estilos y Tácticas</span></li>
+                  <li><span class="sidebar-title">7.3.5. Diseño De La Experimentación</span></li>
+                  <li><span class="sidebar-title">7.3.6. Resultados Del Experimento</span></li>
+                  <li><span class="sidebar-title">7.3.7. Análisis y Conclusiones</span></li>
+                  <li><span class="sidebar-title">7.3.8. Retrospectiva</span></li>
+                  <li><span class="sidebar-title">7.3.9. Video Sprint 2</span></li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
       </li>
       <li class="p-link" >
-        <span class="sidebar-title">4. Restricciones</span>
+        <span class="sidebar-title">8. Documento De Acrónimos y Abreviaturas</span>
       </li>
       <li class="p-link" >
-        <span class="sidebar-title">5. Vistas De Arquitectura</span>
-      </li>
-      <li class="p-link" >
-        <span class="sidebar-title">6. Modelos De Arquitectura</span>
-      </li>
-      <li class="p-link" >
-        <span class="sidebar-title">7. Estilos y Tácticas De Arquitectura</span>
-      </li>
-      <li class="p-link" >
-        <span class="sidebar-title">8. Experimentos y Resultados</span>
-      </li>
-      <li class="p-link" >
-        <span class="sidebar-title">9. Sprints </span>
+        <span class="sidebar-title">9. Referencias </span>
       </li>
     </ul>
   </div>

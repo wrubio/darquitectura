@@ -5,7 +5,28 @@ nav {
   -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
   box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.75);
   color: #FFFFFF;
+  overflow: auto;
 }
+/*
+*/
+nav::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #733B89;
+}
+
+nav::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #000000;
+}
+
+nav::-webkit-scrollbar-thumb
+{
+  background-color: rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
 nav h5 {
   border-bottom: 1px solid #D1D5DA;
   padding-bottom: 0.3em;
@@ -20,10 +41,10 @@ nav h6 {
   margin-bottom: 20px;
 }
 .sidebar-title {
-  font-size: 14px;
+  font-size: 13px;
 }
 #sidebar-menu {
-  padding: 20px;
+  padding: 15px 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -57,9 +78,19 @@ nav h6 {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+#sidebar-menu li:last-child {
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  padding: 6px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .side-sublinks {
-  padding-left: 15px;
+  margin-left: 15px;
   clear: both;
+  background-color: rgba(255,255,255, 0.15);
+  margin-top: 15px;
+  padding: 0 10px 0 10px;
 }
 /* ============================================================================================
 /* ============================================================================================

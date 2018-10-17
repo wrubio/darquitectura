@@ -70,4 +70,23 @@ td {
   .h3, h3 {
     font-size: 1.55rem !important;
   }
+  .title-separator {
+    margin: 30px 0;
+    display: -ms-grid;
+    display: grid;
+  }
+}
+@media only screen and (max-width: 460px) {
+  th {
+    font-size: 12px;
+  }
+  td {
+    border: 1px solid #D1D5DA;
+    font-size: 11px;
+  }
+  .title-separator {
+    margin: 20px 0;
+    display: -ms-grid;
+    display: grid;
+  }
 }

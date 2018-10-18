@@ -12,6 +12,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { IntroductionComponent } from './introduction/introduction.component';
 import { TableChangeComponent } from './table-change/table-change.component';
 import { RestrictionsComponent } from './restrictions/restrictions.component';
+import { UserStoriesComponent } from './user-stories/user-stories.component';
+import { AsrComponent } from './asr/asr.component';
 
 
 const appRoutes: Routes = [
@@ -45,6 +47,18 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Restricciones'
         }
+      },
+      {
+        path: 'userStories', component: UserStoriesComponent,
+        data: {
+          breadcrumb: 'Historias De Usuario'
+        },
+      },
+      {
+        path: 'asr', component: AsrComponent,
+        data: {
+          breadcrumb: 'ASRs'
+        },
       }
     ],
   }
@@ -58,7 +72,9 @@ const appRoutes: Routes = [
     SidebarComponent,
     IntroductionComponent,
     TableChangeComponent,
-    RestrictionsComponent
+    RestrictionsComponent,
+    UserStoriesComponent,
+    AsrComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,390 @@
+<div class="component-title">
+  <h1>4.2. Historias De Usuario De Arquitectura</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Esta sección se presentan las historias de usuarios definidas acorde a los requerimientos establecidos en el
+documento del proyecto entregado por el cliente. Las historias de usuario están divididas por los atributos de
+calidad definidos para el curso. (Latencia, Escalabilidad, Disponibilidad, Confidencialidad).
+
+<div class="subtitle-separator"></div>
+
+<h5>4.2.1. Historias De Usuario De Escalabilidad</h5>
+<br>
+<table width="100%">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HUE01</td>
+      <td>Como propietario, cuando me lleguen notificaciones dado que el sistema opera normalmente quiero ver y modificar el estado del parqueadero para validar y actualizar la disponibilidad. Esto debe suceder con 100.000 usuario concurrentes en menos de 30 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE02</td>
+      <td>Como propietario, cuando me lleguen notificaciones dado que el sistema opera en modo sobrecarga quiero ver y modificar el estado del parqueadero para validar y actualizar la disponibilidad. Esto debe suceder en menos de 1 minuto.</td>
+    </tr>
+    <tr>
+      <td>HUE03</td>
+      <td>	Como propietario, cuando cargue los datos de parqueaderos dado que el sistema opera en modo normal quiero que aperezca la oferta para que los clientes puedan visualizarlas disponibles. Esto debe suceder en el 99,96 % de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE04</td>
+      <td>Como propietario, cuando necesite actualizar los datos del parqueadero dado que el sistema opera en modo normal quiero modificar los datos de mi parqueadero(s) para cuando necesite. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE05</td>
+      <td>Como propietario, cuando cambie de estado dado que el sistema opera en modo sobrecarga quiero ver el cambio de estado de autorización del inmuble para no tener que estar pasando documentos físicos. Esto debe responder con 100.000 usuario concurrentes en menos de 20 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE06</td>
+      <td>Como usuario, cuando llegue una solicitud dado que el sistema opera normalmente quiero poder validar la disponibilidad de un parqueadero en el dashboard para poder tomar decisiones sobre qué hacer con el parqueadero. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE07</td>
+      <td>Como usuario, cuando llegue una solicitud dado que el sistema opera en modo sobrecarga quiero poder validar la disponibilidad de un parqueadero en el dashboard para poder tomar decisiones sobre qué hacer con el parqueadero. Esto debe suceder en menos de 20 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE08</td>
+      <td>Como propietario, cuando quiera ver la información del cliente dado que el sistema opera normalmente quiero saber quien es el cliente que va a parquear en mi garaje para validar los datos del usuario. Esto debe suceder el 99, 6% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE09</td>
+      <td>Como propietario, cuando quiera ver la información del cliente dado que el sistema opera en modo sobrecarga quiero saber quien es el cliente que va a parquear en mi garaje para validar los datos del usuario. Esto debe suceder con 100.000 usuario concurrentes en menos de 30 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE10</td>
+      <td>Como oferente, cuando llegue una notificación, dado que el sistema opera de modo sobrecarga quiero recibir notificaciones de actualizacion por parte del cliente para actualizar el estado del parqueadero. Esto debe suceder el 99,6% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE11</td>
+      <td>Como usuario, cuando realice una busqueda dado que el sistemas opera normalmente quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) para ver los parqueaderos más cercanos. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE12</td>
+      <td>Como usuario, cuando realice una busqueda dado que el sistemas opera en modo sobrecarga quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) para ver los parqueaderos más cercanos. Esto debe suceder con 100.000 usuario concurrentes en menos de 20 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE13</td>
+      <td>Como usuario, cuando aplique a una reserva dado que el sistema opera en modo sobrecarga quiero poder reservar un parqueadero para dejar mi carro cerca al trabajo. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE14</td>
+      <td>Como usuario, cuando aplique a una reserva dado que el sistema opera en modo sobrecarga quiero poder reservar un parqueadero para dejar mi carro cerca al trabajo. Esto debe suceder el 99,6% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE15</td>
+      <td>Como cliente, cuando busque parqueaderos en otros paises dado que el sistema opera normalmente quiero poder usar nidoo cuando viaje fuera del país para cuando tenga un proyecto en otro país. Esto debe suceder el 99,6% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE16</td>
+      <td>Como administrador del parqueadero, cuando reciba notificaciones dado que el sistema opera normalmente quiero recibir la actualizacion del estado del parqueadero por parte del cliente para validar su disponibilidad. Esto debe suceder en menos de 30 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE17</td>
+      <td>Como administrador del parqueadero, cuando reciba notificaciones dado que el sistema opera de forma sobrecarga quiero recibir la actualizacion del estado del parqueadero por parte del cliente para validar su disponibilidad. Esto debe suceder con 100.000 usuarios concurrentes en menos de 1 minuto.</td>
+    </tr>
+    <tr>
+      <td>HUE18</td>
+      <td>Como administrador del parqueadero, cuando consulte la información del usuario dado que el sistema opera de forma normal quiero poder visualizar la información del cliente para no tener que imprimir todos los ingresos. Esto debe suceder el 99,6% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUE19</td>
+      <td>Como administrador del parqueadero, cuando consulte la información del usuario dado que el sistema opera de forma sobrecarga quiero poder visualizar la información del cliente para no tener que imprimir todos los ingresos. Esto debe suceder en menos de 20 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUE20</td>
+      <td>Como administrador del parqueadero, cuando consulte la información del usuario dado que el sistema opera de forma sobrecarga quiero poder visualizar la información del cliente para no tener que imprimir todos los ingresos. Esto debe suceder con 100.000 usuarios concurrentes en menos de 20 segundos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h5>4.2.2. Historias De Usuario De Disponibilidad</h5>
+<br>
+<table width="100%">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descripción</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HUD01</td>
+      <td>Cuando el cliente actualice el estado de la reserva dado que el sistema opera normalmente quiero que esta me notifique para validar la disponibilidad de este, esto debe suceder el 99.99% de veces.</td>
+    </tr>
+    <tr>
+      <td>HUD02</td>
+      <td>Cuando quiera administrar el estado de mi parqueadero, dado que el sistema opera normalmente quiero poder modificar los campos de disponibilidad para poder mostrar el estado de disponibilidad, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD03</td>
+      <td>	Cuando se requieran autorizaciones de ingreso, dado que el sistema opera normalmente quiero poder subir las autorizaciones al sistema para que estén disponibles para el cliente y agilizar el proceso de ingreso, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD04</td>
+      <td>Cuando se hagan solicitudes de reserva del parqueadero, dado que el sistema opera normalmente quiero ver la información del cliente NIDOO para agilizar el proceso de autorización, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD05</td>
+      <td>Cuando cree mi cuenta de oferente, dado que el sistema opera normalmente quiero poder ingresar y editar los datos de mis parqueaderos para poder ponerlos disponibles, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD06</td>
+      <td>	Cuando el cliente actualice el estado de la reserva dado que el sistema opera normalmente quiero que esta me notifique para validar la disponibilidad de este, esto debe suceder el 99.99% de veces.</td>
+    </tr>
+    <tr>
+      <td>HUD07</td>
+      <td>Cuando quiera administrar el estado de mis parqueaderos, dado que el sistema opera normalmente quiero poder cambiar los estados de estos para poder ofrecerlos a mis clientes, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD08</td>
+      <td>Cuando se hagan solicitudes de reserva del parqueadero, dado que el sistema opera normalmente quiero ver la información del cliente NIDOO para agilizar el proceso ingreso, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD09</td>
+      <td>Cuando ingrese los datos del parqueadero, dado que el sistema opera normalmente quiero poder subir un mapa del parqueadero para agilizar el proceso, esto debe suceder el 99.99$ de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD10</td>
+      <td>Cuando la hora de reserva se active, dado que el sistema opera normalmente quiero que el sistema envíe una notificación al cliente de la activación de esta para que actualice el estado de su reserva. Esto debe suceder el 99.9% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD11</td>
+      <td>Cuando realice una búsqueda de reserva de parqueadero, dado que el sistema opera normalmente quiero que se puedan realizar filtros de dirección, zona, tipo de vehículo para ecoger el más cercano, esto debe suceder el 99.99$ de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD12</td>
+      <td>Cuando vaya a ingresar al parqueadero, dado que el sistema opera normalmente quiero poder visualizar las autorizaciones de ingreso para que poder mostrarlas al vigilante y así agilizar el proceso de ingreso, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD13</td>
+      <td>Cuando realice una reserva de un parqueadero, dado que el sistema opera normalmente, quiero que el sistema me confirme la reserva de este para confirmar la reserva. Esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD14</td>
+      <td>Cuando quiero realizar una reserva por hora, dado que el sistema opera normalmente quiero conocer la disponibilidad en horas de este para poder hacer la reserva. Esto debe suceder el 99.99$ de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD15</td>
+      <td>Cuando cree mi cuenta de NIDOO dado que el sistema opera normalmente, quiero que el sistema me permita usar la misma cuenta para cuando salga del país. Esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD16</td>
+      <td>	Cuando quiera administrar el estado de los parqueaderos, dado que el sistema opera normalmente quiero poder cambiar los estados de estos para poder ofrecerlos a los clientes, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD17</td>
+      <td>Cuando el cliente actualice el estado de la reserva dado que el sistema opera normalmente quiero que esta me notifique para validar la disponibilidad de este, esto debe suceder el 99.99% de veces.</td>
+    </tr>
+    <tr>
+      <td>HUD18</td>
+      <td>	Cuando se hagan solicitudes de reserva del parqueadero, dado que el sistema opera normalmente quiero ver la información del cliente NIDOO para poderme comunicarme con el cliente, esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD19</td>
+      <td>Cuando el cliente requiere ingreso al parqueadero, dado que sistema opera normalmente quiero poder consultar los documentos de autorización para poder agilizar el proceso de ingreso al cliente. Esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+    <tr>
+      <td>HUD20</td>
+      <td>	Cuando el cliente parquea su vehículo dado que el sistema opera normalmente quiero que el sistema me permita enviarle una notificación al cliente de actualizar el estado de la reserva para que no olvide hacerla si en dado caso no se realiza la acción, el sistema debe enviar el mensaje automáticamente. Esto debe suceder el 99.99% de las veces.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h5>4.2.3. Historias De Usuario De Latencia</h5>
+<br>
+<table width="100%">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descripción</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HUL01</td>
+      <td>Como oferente, quiero poder validar la disponibilidad de mis parqueaderos y tener una respuesta en menos de 2 segundos</td>
+    </tr>
+    <tr>
+      <td>HUL02</td>
+      <td>Como oferente quiero poder solicitar el estado de mi cuenta y que la plataforma me responda en menos de 2 segundo</td>
+    </tr>
+    <tr>
+      <td>HUL03</td>
+      <td>Como oferente quiero poder registrar mi parqueadero en la plataforma y esta me debe confirmar su registro en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL04</td>
+      <td>Como oferente quiero que la plataforma me envíe una notificación cuando alguien desea alquilar mi parqueadero en menos de 5 segundos después de que el sistema haya recibido la solicitud.</td>
+    </tr>
+    <tr>
+      <td>HUL05</td>
+      <td>Como oferente quiero poder solicitar la descarga de los papeles para la autotización de un conductor y su auto, y que la plataforma me responda en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL06</td>
+      <td>Como oferente corporativo, quiero poder validar la disponibilidad de mis parqueaderos en el dashboard y tener una respuesta en menos de 2 segundos</td>
+    </tr>
+    <tr>
+      <td>HUL07</td>
+      <td>Como oferente quiero poder solicitar el estado de mi cuenta y que la plataforma me responda en menos de 2 segundo</td>
+    </tr>
+    <tr>
+      <td>HUL08</td>
+      <td>Como oferente quiero poder registrar mi parqueadero en la plataforma y esta me debe confirmar su registro en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL09</td>
+      <td>Como oferente quero que la plataforma me envíe una notificación cuando alguien desea alquilar mi parqueadero en menos de 5 segundos después de que el sistema haya recibido la solicitud.</td>
+    </tr>
+    <tr>
+      <td>HUL10</td>
+      <td>Como oferente quiero poder solicitar la descarga de los papeles para la autotización de un conductor y su auto, y que la plataforma me responda en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL11</td>
+      <td>Como usuario quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) y ver los resultados en menos de 1 segundo.</td>
+    </tr>
+    <tr>
+      <td>HUL12</td>
+      <td>Como usuario, quiero poder reservar un parqueadero y que el sistema me confirme mi reserva en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL13</td>
+      <td>Como usuario quiero realizar el pago por el tiempo alquilado del parqueadero y que el sistema me confirme el estado de dicha transacción en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL14</td>
+      <td>Como usuario quero solicitar la descarga de los documentos de autorización para el parqueadero y que el sistema responda en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL15</td>
+      <td>Como usuario quiero poder cancelar mi reserva y que el sistema me responda en menos de 3 segundo si la cancelación fue exitosa.</td>
+    </tr>
+    <tr>
+      <td>HUL16</td>
+      <td>Como administrador de parqueadero quiero recibir una notificación de que el cliente ya está llegando para poder abrirle la puerta en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL17</td>
+      <td>	Como administrador de parqueadero quiero poder validar la identidad del conductor a ingresar y que el sistema me responsa en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL18</td>
+      <td>Como adminstrador de parqueadero quiero poder contactarme con el cliente y que el sistema me ponga en contacto en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL19</td>
+      <td>	Como administrador de parqueadero quiero poder solicitar el cambio de dispositivo y el sistema debe poder responder a mi solicitud en menos de 3 segundos.</td>
+    </tr>
+    <tr>
+      <td>HUL20</td>
+      <td>Como usuario quero solicitar la descarga de los documentos de autorización para el parqueadero y que el sistema responda en menos de 2 segundos.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h5>4.2.4. Historias De Usuario De Confidencialidad</h5>
+<br>
+<table width="100%">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descripción</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>HUC01</td>
+      <td>Como oferente, cuando consulte la información de mi estado de dado que el sistema opera normalmente, quiero la informacion no muestre medios de pago ni información de cuentas.</td>
+    </tr>
+    <tr>
+      <td>HUC02</td>
+      <td>Cuando oferte la disponibilidad del parqueadero, quiero que solo se visualice la informacion necesaria del parqueadero a los clientes.</td>
+    </tr>
+    <tr>
+      <td>HUC03</td>
+      <td>Cuando el sistema selecciona un cliente para mi parqueadero, quiero que tenga encuenta las medidas del parqueadero para evitar posibles golpes a los vehícuos o problema al parquear</td>
+    </tr>
+    <tr>
+      <td>HUC04</td>
+      <td>Cuando ingrese los datos del garaje al sistema, quiero que solo se puedan consultar información que yo considere pública.</td>
+    </tr>
+    <tr>
+      <td>HUC05</td>
+      <td>Cuando el sistma encuentra un cliente para el garaje, quiero que se me asignen los mejores clientes de acuerdo a una puntuación</td>
+    </tr>
+    <tr>
+      <td>HUC06</td>
+      <td>Como oferente, cuando consulte la información de mi estado de dado que el sistema opera normalmente, quiero la informacion no muestre medios de pago ni información de cuentas.</td>
+    </tr>
+    <tr>
+      <td>HUC07</td>
+      <td>	Cuando el sistema asigne un cliente un parqueadero, quiero que sólo se muestre la información de la ubicacion delparqueaderoy del encargado de la portería.</td>
+    </tr>
+    <tr>
+      <td>HUC08</td>
+      <td>Cuando consulte el dashboard, quiero visualizar la informacion mas precisa respecto al alquiler del parquadero</td>
+    </tr>
+    <tr>
+      <td>HUC09</td>
+      <td>Como oferente corporativo cuando revise las tarifas, dado que el sistema opera normalmente, quiero que estas sean proporcionales según su ubicación y que los demás parqueaderos no puedan modificar sus tarifas para evitar problemas legales y de competencia. Esto debe suceder el 100% de las veces</td>
+    </tr>
+    <tr>
+      <td>HUC10</td>
+      <td>Cuando registre parqueaderos al sistema. Quiero que sean claros los terminos y condiciones para poder decidir si quiero aceptar el servicio que ofrece Nidoo</td>
+    </tr>
+    <tr>
+      <td>HUC11</td>
+      <td>Cuando este pagando el parqueadero en linea, quiero que la transaccion sea exitosa siempre para no tener problemas con mi dinero</td>
+    </tr>
+    <tr>
+      <td>HUC12</td>
+      <td>Cuando solicite un parqueadero, quiero siempre estereservado para evitar malos entendidos o disgustos si llego encontrar el parquedero ocupado.</td>
+    </tr>
+    <tr>
+      <td>HUC13</td>
+      <td>	Cuando este ingresando medios de pago en el sistema, quiero que me aseguren que mi información estara protegida y nadie mas podrá acceder a ella.</td>
+    </tr>
+    <tr>
+      <td>HUC14</td>
+      <td>Cuando e registre en la aplicación, quiero que sean claros los términos y condiciones del servicio para poder decidir si tomo el servicio.</td>
+    </tr>
+    <tr>
+      <td>HUC15</td>
+      <td>Cuando mi carro este parqueado, quiero que en caso de golpes sean claros los procedimiendotos de de quejas y reclamos para que se me responda por los daños.</td>
+    </tr>
+    <tr>
+      <td>HUC16</td>
+      <td>Cuando ingrese la información como administrador de parqueaderos, quiero que sean claros los terminos y condiciones sobre el trato que se le va a dar a mis datos personales.</td>
+    </tr>
+    <tr>
+      <td>HUC17</td>
+      <td>Cuando el cliente se dirija al parqueadero, quiero que se me notifique de diferentes maneras para poder estar pendiente del ingreso del vehículo.</td>
+    </tr>
+    <tr>
+      <td>HUC18</td>
+      <td>Cuando no pueda atender el ingreso del vehículo, quiero que se pueda asignar un colaborador temporal para mantener la continuidad del servicio.</td>
+    </tr>
+    <tr>
+      <td>HUC19</td>
+      <td>Cuando consulte los clientes Nidoo del parqueadero, quiero visualizar la informacion necesaria para que ayude a la gestión de los mismos eficientemente.</td>
+    </tr>
+    <tr>
+      <td>HUC20</td>
+      <td>Cuando un cliente Nidoo no cumple con las condiciones de ingreso al parquero (que el vehículo no lleve drogas o otros elementos ilegales), quiero que puedan informar las novedades para el oferente y el sistema Nidoo para tomar las medidas legales.</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,4 +1,6 @@
-#container {}
+#container {
+  padding: 52px 0;
+}
 #smallDevice-menu {
   display: none;
 }
@@ -45,7 +47,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 52px 0 0 0;
   }
   #header-document {
     height: 350px;
@@ -80,7 +81,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 52px 0 0 0;
   }
   #breadcrumb {
     width: calc(100% - 320px);

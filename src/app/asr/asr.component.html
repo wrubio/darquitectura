@@ -1,0 +1,95 @@
+<div class="component-title">
+  <h1>4.3. Requisitos de Importancia Arquitectónica ASR</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Esta sección se presentan aquellos requisitos que tienen un gran impacto o efecto importante en la arquitectura del sistema, de
+manera que si éstas están ausentes, la arquitectura resultante sería diferente.
+
+<br><br>
+
+Para la definición de cada una de estas, se realizó una categorización de las decisiones de diseño de la arquitectura, donde
+se buscó cuál de los requisitos del proyecto podría afectar directamente las decisiones de arquitectura.
+
+<div class="subtitle-separator"></div>
+
+<h5>4.3.1. Tabla De ASRs</h5>
+
+<br>
+
+<table width="100%">
+  <thead>
+  <tr>
+    <th>Código</th>
+    <th>Descripción</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ASR01</td>
+      <td>Como propietario, cuando me lleguen notificaciones dado que el sistema opera normalmente quiero ver y modificar el estado del parqueadero para validar y actualizar la disponibilidad. Esto debe suceder con 100.000 usuario concurrentes en menos de 30 segundos.​</td>
+    </tr>
+    <tr>
+      <td>ASR02</td>
+      <td>Como propietario, cuando cargue los datos de parqueaderos dado que el sistema opera en modo normal quiero que aparezca la oferta para que los clientes puedan visualizarlas disponibles. Esto debe suceder en el 99,96 % de las veces.​</td>
+    </tr>
+    <tr>
+      <td>ASR03</td>
+      <td>Cuando se requieran autorizaciones de ingreso, dado que el sistema opera normalmente quiero poder subir las autorizaciones al sistema para que estén disponibles para el cliente y agilizar el proceso de ingreso, esto debe suceder el 99.99% de las veces.​</td>
+    </tr>
+    <tr>
+      <td>ASR04</td>
+      <td>Como oferente, cuando consulte la información de mi estado de dado que el sistema opera normalmente, quiero la información no muestre medios de pago ni información de cuentas.​</td>
+    </tr>
+    <tr>
+      <td>ASR05</td>
+      <td>Como oferente corporativo, quiero poder validar la disponibilidad de mis parqueaderos en el dashboard y tener una respuesta en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>ASR06</td>
+      <td>Como oferente quero que la plataforma me envíe una notificación cuando alguien desea alquilar mi parqueadero en menos de 5 segundos después de que el sistema haya recibido la solicitud​.</td>
+    </tr>
+    <tr>
+      <td>ASR07</td>
+      <td>Cuando se hagan solicitudes de reserva del parqueadero, dado que el sistema opera normalmente quiero ver la información del cliente NIDOO para agilizar el proceso ingreso, esto debe suceder el 99.99% de las veces.​</td>
+    </tr>
+    <tr>
+      <td>ASR08</td>
+      <td>Como oferente corporativo cuando revise las tarifas, dado que el sistema opera normalmente, quiero que estas sean proporcionales según su ubicación y que los demás parqueaderos no puedan modificar sus tarifas para evitar problemas legales y de competencia. Esto debe suceder el 100% de las veces.</td>
+    </tr>
+    <tr>
+      <td>ASR09</td>
+      <td>Como usuario, cuando realice una búsqueda dado que el sistema opera normalmente quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) para ver los parqueaderos más cercanos. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>ASR10</td>
+      <td>Como usuario, cuando aplique a una reserva dado que el sistema opera en modo sobrecarga quiero poder reservar un parqueadero para dejar mi carro cerca al trabajo. Esto debe suceder con 100.000 usuario concurrentes en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>ASR11</td>
+      <td>Como usuario cuando necesite cancelar mi reserva, dado que el sistema opera normalmente, quiero que el sistema me responda en menos de 3 segundos si la cancelación fue exitosa o no.</td>
+    </tr>
+    <tr>
+      <td>ASR12</td>
+      <td>Cuando cree mi cuenta de NIDOO dado que el sistema opera normalmente, quiero que el sistema me permita usar la misma cuenta para cuando salga del país. Esto debe suceder el 99.5% de las veces.</td>
+    </tr>
+    <tr>
+      <td>ASR13</td>
+      <td>Como usuario cuando esté ingresando medios de pago en el sistema, dado que este funciona normalmente, quiero que me aseguren que mi información estará protegida y nadie más podrá acceder a ella el 100% de las veces.</td>
+    </tr>
+    <tr>
+      <td>ASR14</td>
+      <td>Como administrador de parqueadero, dado que el sistema opera normalmente, quiero recibir una notificación de que el cliente ya está llegando para poder abrirle la puerta en menos de 5 segundos.</td>
+    </tr>
+    <tr>
+      <td>ASR15</td>
+      <td>Como administrador de parqueadero, dado que el sistema opera normalmente, quiero poder validar la identidad del conductor a ingresar y que el sistema me responsa en menos de 2 segundos.</td>
+    </tr>
+    <tr>
+      <td>ASR16</td>
+      <td>Como usuario, cuando realice una búsqueda dado que el sistema opera normalmente quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) para ver los parqueaderos más cercanos. Esto debe suceder en menos de 1 segundo.</td>
+    </tr>
+  </tbody>
+</table>

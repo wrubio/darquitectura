@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {  RouterModule, Routes } from '@angular/router';
 // External
-import {BreadcrumbsModule} from "ng6-breadcrumbs";
+import {BreadcrumbsModule} from 'ng6-breadcrumbs';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // App components
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { TableChangeComponent } from './table-change/table-change.component';
 import { RestrictionsComponent } from './restrictions/restrictions.component';
 import { UserStoriesComponent } from './user-stories/user-stories.component';
 import { AsrComponent } from './asr/asr.component';
+import { AsrPriorityComponent } from './asr-priority/asr-priority.component';
+import { VideosComponent } from './videos/videos.component';
+import { Retro0Component } from './retro0/retro0.component';
 
 
 const appRoutes: Routes = [
@@ -59,6 +62,24 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'ASRs'
         },
+      },
+      {
+        path: 'asrPriority', component: AsrPriorityComponent,
+        data: {
+          breadcrumb: 'Priorización De ASRs'
+        },
+      },
+      {
+        path: 'video/:sprint', component: VideosComponent,
+        data: {
+          breadcrumb: 'Videos De Los Sprints'
+        },
+      },
+      {
+        path: 'retro0', component: Retro0Component,
+        data: {
+          breadcrumb: 'Retrospectiva Del Sprint 0'
+        },
       }
     ],
   }
@@ -74,7 +95,10 @@ const appRoutes: Routes = [
     TableChangeComponent,
     RestrictionsComponent,
     UserStoriesComponent,
-    AsrComponent
+    AsrComponent,
+    AsrPriorityComponent,
+    VideosComponent,
+    Retro0Component
   ],
   imports: [
     BrowserModule,

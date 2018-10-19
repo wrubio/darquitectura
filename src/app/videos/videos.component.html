@@ -1,0 +1,39 @@
+<div class="component-title">
+  <h1>Videos De Los Sprints</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los videos explicativos de cada sprint desarrollado, en este se explica las decisiones de
+arquitecturas tomadas, junto con las vistas, componentes, decisiones críticas de diseño y los experimentos realizados
+para cada atributo.
+
+<div class="subtitle-separator"></div>
+
+<ngb-accordion #acc="ngbAccordion" type="light" aria-multiselectable="false" closeOthers="true">
+  <ngb-panel id="sprint0">
+    <ng-template ngbPanelTitle>
+      <span style="color: black; text-decoration: none;"><b>Video Explicativo Sprint 0</b></span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/OnyVgjERAAA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="sprint1">
+    <ng-template ngbPanelTitle>
+      <span style="color: black; text-decoration: none;"><b>Video Explicativo Sprint 1  - Latencia</b></span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7NsowxVBdYI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="sprint2">
+    <ng-template ngbPanelTitle>
+      <span style="color: black; text-decoration: none;"><b>Video Explicativo Sprint 2  - Escalabilidad</b></span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      Video En Desarrollo
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

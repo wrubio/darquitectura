@@ -1,0 +1,199 @@
+<div class="component-title">
+  <h1>4.4. Priorización De Las ASRs</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Esta sección se presenta la selección de los atributos de calidad por orden de prioridad de acuerdo al análisis de impacto a
+las decisiones de arquitecturas tomadas para el proyecto. Para el proyecto en curso se analizaron los atributos de calidad
+Latencia, Escalabilidad, Disponibilidad y Confidencialidad.
+
+<div class="subtitle-separator"></div>
+
+<h5>4.4.1. Priorización de las ASR</h5>
+
+<p class="text">
+  Inicialmente identificamos los atributos de calidad presentes en el product backlog, asociamos un peso máximo de importancia
+  por cada atributo de calidad, esto es, para nuestro caso por cada atributo de calidad le sumamos un valor al peso máximo de
+  importancia, como tenemos 4 atributos de calidad nuestro peso máximo es de 4, siendo 1 el valor de menos importancia y 4
+  el valor de más importancia.
+  <br><br>
+  Una ves definido el peso relativo procedemos a asignarle un peso a la ASR seleccionada acorde al riesgo percibido en la
+  decisión de arquitectura. Cuando se finalice la asignación del peso procedemos a sumar los valores por atributo de calidad y
+  luego organizamos en orden de importancia los resultados dados.
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th align="center">Escalabilidad</th>
+      <th align="center">Confidencialidad</th>
+      <th align="center">Latencia</th>
+      <th align="center">Disponibilidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="40%">Oferente individual</td>
+      <td width="15%" align="center">1</td>
+      <td width="15%" align="center">3</td>
+      <td width="15%" align="center">2</td>
+      <td width="15%" align="center">4</td>
+    </tr>
+    <tr>
+      <td width="40%">Cliente individual</td>
+      <td width="15%" align="center">1</td>
+      <td width="15%" align="center">2</td>
+      <td width="15%" align="center">3</td>
+      <td width="15%" align="center">4</td>
+    </tr>
+    <tr>
+      <td width="40%">Admin parqueadero</td>
+      <td width="15%" align="center">2</td>
+      <td width="15%" align="center">1</td>
+      <td width="15%" align="center">4</td>
+      <td width="15%" align="center">3</td>
+    </tr>
+    <tr>
+      <td width="40%">Oferente Corporativo</td>
+      <td width="15%" align="center">1</td>
+      <td width="15%" align="center">4</td>
+      <td width="15%" align="center">2</td>
+      <td width="15%" align="center">3</td>
+    </tr>
+    <tr>
+      <td width="40%">Total</td>
+      <td width="15%" align="center">5</td>
+      <td width="15%" align="center">10</td>
+      <td width="15%" align="center">11</td>
+      <td width="15%" align="center">14</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td width="40%"><b>Peso (Riesgo)</b></td>
+      <td width="15%" align="center"><b>4</b></td>
+      <td width="15%" align="center"><b>3</b></td>
+      <td width="15%" align="center"><b>2</b></td>
+      <td width="15%" align="center"><b>1</b></td>
+    </tr>
+  </tfoot>
+</table>
+
+<br>
+
+<p class="text">
+  Con las ponderaciones definidas, procedemos ahora a organizarlas por peso y por persona interesada, luego en cada campo
+  agregamos las ASR definidas por cada persona interesada y sumamos el total de cada ASR agrupada en la columna del atributo.
+  El total de la suma lo multiplicamos por el peso dado en la primera tabla.
+
+  Las ASRs Definidas se pueden consultar en el siguiente link: <a href="#" routerLink="/asr">ASRs</a>
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th></th>
+    <th align="center">Disponibilidad <br>1</th>
+    <th align="center">Latencia <br>2</th>
+    <th align="center">Confidencialidad <br>3</th>
+    <th align="center">Escalabilidad <br>4</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td width="40%">Oferente individual</td>
+    <td width="15%" align="center">ASR03</td>
+    <td width="15%" align="center"></td>
+    <td width="15%" align="center">ASR04</td>
+    <td width="15%" align="center">ASR01, ASR02</td>
+  </tr>
+  <tr>
+    <td width="40%">Cliente individual</td>
+    <td width="15%" align="center">ASR12</td>
+    <td width="15%" align="center">ASR11</td>
+    <td width="15%" align="center">ASR13</td>
+    <td width="15%" align="center">ASR10</td>
+  </tr>
+  <tr>
+    <td width="40%">Admin parqueadero</td>
+    <td width="15%" align="center"></td>
+    <td width="15%" align="center">ASR14, ASR15</td>
+    <td width="15%" align="center"></td>
+    <td width="15%" align="center"></td>
+  </tr>
+  <tr>
+    <td width="40%">Oferente Corporativo</td>
+    <td width="15%" align="center">ASR07</td>
+    <td width="15%" align="center">ASR05, ASR06</td>
+    <td width="15%" align="center">ASR08</td>
+    <td width="15%" align="center"></td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td width="40%"><b>Total</b></td>
+    <td width="15%" align="center"><b>12</b></td>
+    <td width="15%" align="center"><b>15</b></td>
+    <td width="15%" align="center"><b>6</b></td>
+    <td width="15%" align="center"><b>3</b></td>
+  </tr>
+  </tfoot>
+</table>
+
+<br>
+
+<p class="text">
+  Ahora debemos tener en cuenta las ASRs 05, 06, 11, 14 y 15 como guías para el diseño de la arquitectura del sistema NIDOO,
+  sin embargo, entre estas ASRs podrían existir decisiones de arquitectura difíciles de tomar debido a que cada una de estás
+  tienen en cuenta diferentes puntos de atributos de calidad. Para poder resolver este problema priorizamos estas ASRs acorde
+  los beneficios de los stakeholders y la dificultad en términos de arquitectura. En la siguiente tabla se priorizaron las ASRs
+  y quedo como principal la ASR14, seguida de la ASR 05, 06 y 11. Acorde esta priorización nos guarimos para el diseño de la
+  arquitectura del sistema NIDOO.
+</p>
+
+
+<table width="100%">
+  <thead>
+    <tr>
+      <th>ID ASR​</th>
+      <th>Prioridad Stakeholders​ (Qué tan importante es para el grupo de stakeholders) ​MA,A,M,B,MB</th>
+      <th>Prioridad Arquitectos ( Que tanta dificultad tiene para los arquitectos lograr el ASR)​ MA,A,M,B,MB</th>
+      <th>Decisión</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td width="10%" align="center">11</td>
+      <td width="40%" align="center">M</td>
+      <td width="40%" align="center">B</td>
+      <td width="10%" align="center">4</td>
+    </tr>
+    <tr>
+      <td width="10%" align="center">14</td>
+      <td width="40%" align="center">MA</td>
+      <td width="40%" align="center">B</td>
+      <td width="10%" align="center">1</td>
+    </tr>
+    <tr>
+      <td width="10%" align="center">05</td>
+      <td width="40%" align="center">A</td>
+      <td width="40%" align="center">M</td>
+      <td width="10%" align="center">2</td>
+    </tr>
+    <tr>
+      <td width="10%" align="center">06</td>
+      <td width="40%" align="center">M</td>
+      <td width="40%" align="center">MB</td>
+      <td width="10%" align="center">3</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<p class="text">
+
+</p>

@@ -23,8 +23,7 @@ export class SidebarComponent implements OnInit {
     containerSideBar.map(navs => navs.addEventListener('click', e => {
       const liSelector = e.target.nodeName === 'LI' ? containerSideBar.indexOf(e.target) : containerSideBar.indexOf(e.target.closest('li'));
       const liElement = containerSideBar[liSelector];
-      console.log(e);
-      if (liElement.childNodes.length === 3){
+      if (liElement.childNodes.length === 3) {
         const subMenuElement = liElement.childNodes[2];
         const arrowElement = liElement.childNodes[1];
         const iElement = arrowElement.childNodes[0];
@@ -55,7 +54,7 @@ export class SidebarComponent implements OnInit {
       }
 
       const routerLinkAttr = liElement.hasAttribute('routerLink');
-      if (window.matchMedia("(max-width: 768px)").matches || window.matchMedia("(max-width: 460px)").matches) {
+      if (window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(max-width: 460px)').matches) {
         if (routerLinkAttr) {
           navElement.style.width = '';
           toggleBottom.style.left = '';
@@ -68,8 +67,8 @@ export class SidebarComponent implements OnInit {
     // *********************************************************************************************
     toggleBottom.addEventListener('click', e => {
       navElement.style.width = navElement.offsetWidth === 0 ? '320px' : '';
-      toggleBottom.style.left = toggleBottom.style.left=== '' ? '320px' : '';
-    })
+      toggleBottom.style.left = toggleBottom.style.left === '' ? '320px' : '';
+    });
     // *********************************************************************************************
     // ** Sidebar mobile events
     // *********************************************************************************************

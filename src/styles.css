@@ -12,6 +12,12 @@ th {
   border: 1px solid #D1D5DA;
   padding: 5px 15px;
   background-color: #EAEAEA;
+  text-align: center !important;
+}
+tfoot tr td {
+  border: 1px solid #D1D5DA;
+  padding: 5px 15px;
+  background-color: #EAEAEA;
 }
 td {
   border: 1px solid #D1D5DA;

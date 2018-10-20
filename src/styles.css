@@ -76,6 +76,15 @@ td {
   .h3, h3 {
     font-size: 1.55rem !important;
   }
+  .h4, h4 {
+    font-size: 1.35rem !important;
+  }
+  .h5, h5 {
+    font-size: 1.15rem !important;
+  }
+  .h6, h6 {
+    font-size: 1.05rem !important;
+  }
   .title-separator {
     margin: 30px 0;
     display: -ms-grid;

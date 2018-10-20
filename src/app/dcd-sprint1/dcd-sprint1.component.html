@@ -1,0 +1,46 @@
+<div class="component-title">
+  <h1>Decisiones Críticas De Diseño Sprint 01</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Para Nidoo, teniendo en cuenta los ASRs de latencia, tomamos la decisión de montar una arquitectura basada en microservicios. Cada uno de estos independientes del otro y agrupando funcionalidades de dominios específicos. Por ejemplo, el componente de **booking**, es un microservicio encargado del CRUD y demás operaciones relacionadas con la publicación y reserva de un parqueadero. Este va a estar montado sobre instancias replicables cuya carga va a ser balanceada por un Load Balancer. Estas instancias se comunicarán con un cluster de bases de datos no relacionales que tendrán almacenadas las colecciones de los documentos necesarios para persistir las reservas. (Ver modelo de Entidad Relación). Esto se hizo con el fin de poder responder con menor latencia ante situaciones de alta carga. Las lecturas serán especialmente rápidas ya que los schemas están diseñador para que no haya que hacer "JOINS" y se pueda consultar toda la info desde un sólo documento. También los updates de los estados serán rápidos a causa del tamaño en el que se conservarán los documentos y la posibilidad de poder escalar horizontalmente a nivel de instancia y de base de datos.
+
+<br><br>
+
+Por el otro lado, tenemos dos sistemas externos, el de pagos y el de envío de mensajes o correos. A estos servicios nuestro sistema se comunica por un API REST y las peticiones a ellos son asíncronas. Se lanza el mensaje sin esperar si fue mandado con éxito para notificar la cliente. Esto mismo pasa con lo pagos. Se lanza la petición para hacer el pago y se asume que ésta va a ser exitosa. De responder a la petición mediante un webhook, el sistema podrá notificar al cliente por SMS o Email, el estado de sus transacción: exitoso o fallido.
+
+<br><br>
+
+Para las consultas más frecuentes, se puede tener un caché que puede ser actualizada periódicamente o cada vez que un nuevo parqueadero es publicado. De esta manera las consultas de los parqueaderos y su disponibilidad puede ser mucho más rápida.
+
+<br><br>
+<h4>Puntos de sensibilidad</h4>
+
+<div class="subtitle-separator"></div>
+
+<h5>Conexión con la base de datos</h5>
+
+Se decidió usar Mongo DB debido a las siguientes características que favorecen latencia y escalabilidad.
+<div class="subtitle-separator"></div>
+<b>Alta consistencia:</b> provee una gran rapidez de para la consulta y escritura de datos al ser una base de datos NoSql.
+<br><br>
+<b>Rendimiento y escalabilidad:</b> El uso de auto-sharding permitirá escalar horizontalmente las instancias DB a medida que el número de usuarios aumente:
+<br>
+<div class="img1">
+  <img src="./assets/img/sprint1/img1.png" alt="Imagen de scalabilidad horizontal">
+</div>
+<br>
+<b>Direccionamiento de consultas:</b> Es un controlador disponible para distribuir las transacciones entre las diferentes instancias de MongoDB (Sharding). Esto favorecerá los requerimientos de latencia de Nidoo para la reserva de parqueaderos:
+<br>
+<div class="img1">
+  <img src="./assets/img/sprint1/img2.png" alt="Imagen de scalabilidad horizontal 2">
+</div>
+<div class="subtitle-separator"></div>
+<h4>Conexión con los sistemas externos</h4>
+Los sistemas externos representan componentes críticos de latencia para Nidoo debido a que no se tiene claridad del tiempo de respuesta de estos componentes. En el diseño de arquitectura se propone trabajar estos componentes de forma asíncrona con acuse de respuesta:
+<div class="subtitle-separator"></div>
+<b>Message provider:</b> Es un proveedor de notificaciones para enviar mensajes desde el sistema Nidoo a sus diferentes clientes (dispositivos móviles y aplicaciones).
+<br><br>
+<b>Payment provider:</b> Proveedor de pagos en línea de nidoo.

@@ -54,8 +54,9 @@ export class SidebarComponent implements OnInit {
       }
 
       const routerLinkAttr = liElement.hasAttribute('routerLink');
+      const routerLinkAttr2 = liElement.hasAttribute('ng-reflect-router-link');
       if (window.matchMedia('(max-width: 768px)').matches || window.matchMedia('(max-width: 460px)').matches) {
-        if (routerLinkAttr) {
+        if (routerLinkAttr || routerLinkAttr2) {
           navElement.style.width = '';
           toggleBottom.style.left = '';
         }

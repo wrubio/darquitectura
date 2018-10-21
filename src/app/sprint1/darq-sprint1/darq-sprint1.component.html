@@ -1,0 +1,92 @@
+<div class="component-title">
+  <h1>Diseño De La Arquitectura Sprint 1</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos el diseño de arquitectura para satisfacer los requerimientos de las ASRs que afectan
+directamente el diseño general de la arquitectura, para esto se ha tenido en cuenta el atributo de calidad de latencia.
+
+<div class="subtitle-separator"></div>
+
+<h4>Diseño De Arquitectura - Latencia</h4>
+
+Para probar tácticas de escalabilidad decidimos utilizar los micro servicios de búsqueda y de reserva de parqueadero debido a
+que pertenecen a los ASR que mas consultas pueden tener en Nidoo. Como el experimento esta desplegado en Heroku, esta plataforma
+permite facilidad de escalado tanto vertical como horizontal. los resultados nos permitirán saber hasta que umbral o pico de
+se deberán habilitar más instancias de los microservicios.
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama Funcional - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/sprint1/img8.jpg" alt="diagrama Componente Conector" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+Con base en el ASR-11, identificamos que para poder actualizar el estado de la reserva en menos de 3 segundos se va a usar una
+base de datos NoSQL para evitar los JOINS y tener la información necesario en documentos lógicos concretos. El estado únicamente
+se actualizaría en el documento booking el cuál va a ser consultado por el id de la reserva.
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama De Despliegue - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/sprint1/img9.jpg" alt="diagrama Componente Conector" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+En este diagrama se puede ver que buscamos favorecer la escalabilidad horizontal de la infraestructura utilizando la
+replicación de instancias de la aplicación y de la utilización de clusters de bases de datos.
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Diargrama De Información - Modelo De Entidad Relación </th>
+  </tr>
+  <tr>
+    <td width="100%">
+      <div class="img1">
+        <img src="./assets/img/sprint1/img10.jpg" alt="diagrama Componente Conector" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+Este diagrama de entidad relación muestra lo esencial para poder configurar la prueba y evidencia los puntos sensibles en
+los datos. Se busca tener colecciones de documentos sin muchas relaciones para evitar joins y así disminuir la latencia de las
+consultas.

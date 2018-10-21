@@ -1,0 +1,43 @@
+<div class="component-title">
+  <h1>ASRs Consideradas En El Sprint 2</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los ASR consideradas para satisfacer los requerimientos de escalabilidad  de la arquitectura.
+El objetivo es determinar los puntos de sensibilidad para determinar si las decisiones de arquitectura que se han
+tomado van por buen camino.
+
+<div class="subtitle-separator"></div>
+
+<h5>ASRs Consideradas</h5>
+
+<br>
+
+<table>
+  <thead>
+  <tr>
+    <th>
+      Código
+    </th>
+    <th>
+      Descripción
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>ASR17</td>
+    <td>Como usuario, cuando aplique a una reserva dado que el sistema opera en modo sobrecarga quiero poder reservar un parqueadero para dejar mi carro cerca al trabajo. Esto debe suceder con 2.000 usuarios concurrentes por segundo durante 5 segundos.</td>
+  </tr>
+  <tr>
+    <td>ASR18</td>
+    <td>Como usuario, cuando necesite cancelar mi reserva, dado que el sistema opera normalmente, quiero que el sistema me responda en menos de 3 segundos si la cancelación fue exitosa o no. Esto debe suceder en con 1000 usuarios concurrentes por segundo durante 5 segundos.</td>
+  </tr>
+  <tr>
+    <td>ASR19</td>
+    <td>Como usuario, cuando realice una búsqueda dado que el sistema opera normalmente quiero buscar parqueaderos dados los criterios: (Dirección, zona, tipo vehículo) para ver los parqueaderos más cercanos. Esto debe suceder en menos de 1 segundo con 2000 usuarios concurrentes durante 5 segundos. </td>
+  </tr>
+  </tbody>
+</table>

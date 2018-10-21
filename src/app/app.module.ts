@@ -16,11 +16,26 @@ import { UserStoriesComponent } from './user-stories/user-stories.component';
 import { AsrComponent } from './asr/asr.component';
 import { AsrPriorityComponent } from './asr-priority/asr-priority.component';
 import { VideosComponent } from './videos/videos.component';
-import { Retro0Component } from './retro0/retro0.component';
-import { AsrcLatencyComponent } from './asrc-latency/asrc-latency.component';
-import { DcdSprint1Component } from './dcd-sprint1/dcd-sprint1.component';
-import { SytSprint1Component } from './syt-sprint1/syt-sprint1.component';
-import { DexSprint1Component } from './dex-sprint1/dex-sprint1.component';
+import { Retro0Component } from './sprint0/retro0/retro0.component';
+import { AsrcLatencyComponent } from './sprint1/asrc-latency/asrc-latency.component';
+import { DcdSprint1Component } from './sprint1/dcd-sprint1/dcd-sprint1.component';
+import { SytSprint1Component } from './sprint1/syt-sprint1/syt-sprint1.component';
+import { DexSprint1Component } from './sprint1/dex-sprint1/dex-sprint1.component';
+import { RexSprint1Component } from './sprint1/rex-sprint1/rex-sprint1.component';
+import { RycSprint1Component } from './sprint1/ryc-sprint1/ryc-sprint1.component';
+import { Retro1Component } from './sprint1/retro1/retro1.component';
+import { VfpmComponent } from './vfpm/vfpm.component';
+import { VdpmComponent } from './vdpm/vdpm.component';
+import { VipmComponent } from './vipm/vipm.component';
+import { AsrcComponent } from './sprint2/asrc/asrc.component';
+import { DarqSprint2Component } from './sprint2/darq-sprint2/darq-sprint2.component';
+import { DcdSprint2Component } from './sprint2/dcd-sprint2/dcd-sprint2.component';
+import { SytSprint2Component } from './sprint2/syt-sprint2/syt-sprint2.component';
+import { DexpSprint2Component } from './sprint2/dexp-sprint2/dexp-sprint2.component';
+import { RexpSprint2Component } from './sprint2/rexp-sprint2/rexp-sprint2.component';
+import { AycSprint2Component } from './sprint2/ayc-sprint2/ayc-sprint2.component';
+import { Retro2Component } from './sprint2/retro2/retro2.component';
+import { DarqSprint1Component } from './sprint1/darq-sprint1/darq-sprint1.component';
 
 
 const appRoutes: Routes = [
@@ -92,9 +107,15 @@ const appRoutes: Routes = [
         },
       },
       {
+        path: 'darqSprint1', component: DarqSprint1Component,
+        data: {
+          breadcrumb: 'Diseño Arquitectura Sprint 01'
+        },
+      },
+      {
         path: 'dcdSprint1', component: DcdSprint1Component,
         data: {
-          breadcrumb: 'Decisiones Críticas De Diseño Sprint 1'
+          breadcrumb: 'Decisiones Críticas De Diseño'
         },
       },
       {
@@ -106,7 +127,91 @@ const appRoutes: Routes = [
       {
         path: 'dexSprint1', component: DexSprint1Component,
         data: {
-          breadcrumb: 'Diseño del experimento Sprint 01'
+          breadcrumb: 'Diseño del experimento'
+        },
+      },
+      {
+        path: 'rexSprint1', component: RexSprint1Component,
+        data: {
+          breadcrumb: 'Resultado del experimento'
+        },
+      },
+      {
+        path: 'rycSprint1', component: RycSprint1Component,
+        data: {
+          breadcrumb: 'Análisis y conclusiones'
+        },
+      },
+      {
+        path: 'retroSprint1', component: Retro1Component,
+        data: {
+          breadcrumb: 'Retrospectiva Sprint 01'
+        },
+      },
+      {
+        path: 'vfpm', component: VfpmComponent,
+        data: {
+          breadcrumb: 'Vista Funcional Payment'
+        },
+      },
+      {
+        path: 'vdpm', component: VdpmComponent,
+        data: {
+          breadcrumb: 'Vista De Despliegue Payment'
+        },
+      },
+      {
+        path: 'vipm', component: VipmComponent,
+        data: {
+          breadcrumb: 'Vista De Información Payment'
+        },
+      },
+      {
+        path: 'asrcSprint2', component: AsrcComponent,
+        data: {
+          breadcrumb: 'ASRs Consideradas Sprint 02'
+        },
+      },
+      {
+        path: 'darqSprint2', component: DarqSprint2Component,
+        data: {
+          breadcrumb: 'Diseño Arquitectura Sprint 02'
+        },
+      },
+      {
+        path: 'dcdSprint2', component: DcdSprint2Component,
+        data: {
+          breadcrumb: 'Decisiones Criticas De Diseño Sprint 02'
+        },
+      },
+      {
+        path: 'eytSprint2', component: SytSprint2Component,
+        data: {
+          breadcrumb: 'Estilos y Tácticas Sprint 02'
+        },
+      },
+      {
+        path: 'dexpSprint2', component: DexpSprint2Component,
+        data: {
+          breadcrumb: 'Diseño Experimento Sprint 02'
+        },
+      },
+      {
+        path: 'rycSprint2', component: AycSprint2Component,
+        data: {
+          breadcrumb: 'Análisis y Conclusiones Sprint 02'
+        },
+      },
+      {
+        path: 'retroSprint2', component: Retro2Component,
+        data: {
+          breadcrumb: 'Retrospectiva Sprint 02'
+        },
+      },
+      {
+        path: 'rexpSprint2', component: RexpSprint2Component,
+        data: {
+          breadcrumb: 'Resultado Experimentos Sprint 02'
         },
       }
     ],
@@ -130,7 +235,22 @@ const appRoutes: Routes = [
     AsrcLatencyComponent,
     DcdSprint1Component,
     SytSprint1Component,
-    DexSprint1Component
+    DexSprint1Component,
+    RexSprint1Component,
+    RycSprint1Component,
+    Retro1Component,
+    VfpmComponent,
+    VdpmComponent,
+    VipmComponent,
+    AsrcComponent,
+    DarqSprint2Component,
+    DcdSprint2Component,
+    SytSprint2Component,
+    DexpSprint2Component,
+    RexpSprint2Component,
+    AycSprint2Component,
+    Retro2Component,
+    DarqSprint1Component
   ],
   imports: [
     BrowserModule,

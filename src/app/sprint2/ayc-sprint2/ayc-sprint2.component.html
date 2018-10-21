@@ -1,0 +1,27 @@
+<div class="component-title">
+  <h1>Análisis Y Conclusiones Del Experimento Sprint 02</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los análisis de los resultados obtenidos en la experimentación de los puntos de sensibilidad que
+definimos para el sprint 02 y que están enfocado en el atributo de calidad de escalabilidad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Análisis Y Conclusiones Del Experimento De Escalabilidad</h4>
+
+<br>
+
+Una vez terminado el experimento consideramos que los resultados fueron satisfactorios y se va a dejar la
+arquitectura como está ya que consideramos que los resultados fueron satisfactorios. El sistema puede escalar horizontal y
+verticalmente bajo demanda gracias a su arquitectura orientada a microservicios. Dado que la infraestructura está montada sobre
+heroku, a medida que crece la demanda, el número de instancias auto escala con base en los parámetros y presupuesto definidos.
+
+<div class="subtitle-separator"></div>
+
+Vemos que el cuello de botella más grande que tiene el sistema en el momento es la base de datos cuando se consultan
+parqueaderos por la ubicación. Como no se puede hacer un caché de estos datos tan fácilmente la cola en la base de datos tiende
+a crecer rápidamente con el crecimiento de peticiones. El resto de las consultas sí pueden ser cacheadas para evitar realizar
+tantos consumos a la base de datos y poder responder no sólo más rápido sino escalar sin problemas.

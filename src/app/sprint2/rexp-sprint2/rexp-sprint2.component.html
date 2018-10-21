@@ -1,0 +1,134 @@
+<div class="component-title">
+  <h1>Resultados Del Experimento Sprint 02</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los resultados obtenidos del experimento de los puntos sensibilidad que definimos para el
+sprint 02 y que están enfocados en el atributo de calidad de escalabilidad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Análisis De Los Resultados Obtenidos</h4>
+
+<div class="subtitle-separator"></div>
+
+<h5>Search microservices</h5>
+
+<div class="subtitle-separator"></div>
+
+<b>Prueba consulta de parqueaderos por ubicación (latitud, longitud):</b> <br>
+La siguiente prueba se implementó un escenario donde simulamos la ejecución de 9.999 usuarios concurrentes en un entorno controlado,
+para esto nos apoyamos de una herramienta de pruebas llamada SoapUI que nos permitió realizar este experimento, dando como resultado
+un tiempo de respuesta mínimo de 202 y máximo 4.768 milisegundos. El resultado de este experimento fue el cumplimiento exitoso
+de los ASR de búsqueda.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs22.png" alt="Carga de concurrencia" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+En esta grafica evidenciamos el comportamiento que ocurrió en el servidor de aplicación durante la prueba de carga de concurrencia,
+los picos de las transacciones que ocurrieron durante un periodo corto de tiempo, a pesar de que fue un poco alto los tiempos de
+respuestas no presentó ningún error de denegación de los servicios lo cual confirma que pudo sostener la carga estipulada en los ASR,
+recordando que la prueba de carga se realizó con 9.999 usuarios durante 5 minutos.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs23.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs24.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Durante esta prueba se generó un pico porque se envió paralelamente otra prueba de carga con otra máquina con
+aproximadamente 5.000 usuarios concurrentes, a pesar de que no presentaron errores en el servicio el sistema presentó una
+leve demora en la respuesta que no supero desbordantemente los tiempos de respuestas, pero notamos que con aproximadamente 4.000
+transacciones el sistema se comportó normalmente respondiendo aproximadamente en un rango de 1 segundo.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs27.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs25.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs26.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+El máximo consumo de recursos en esta prueba de carga se la llevó la base de datos, quedando evidenciado en las siguientes
+graficas donde se demuestra la gran cantidad de tiempo y recursos que utiliza para tratar conseguir los parqueaderos cercanos
+a la ubicación de usuario, como mencionamos anteriormente la BD es uno de nuestros puntos críticos de sensibilidad a considerar.
+
+<br><br>
+Este experimento lo realizamos en un ambiente de pruebas con recursos muy limitados que no nos permitieron sacarle el
+máximo provecho de los recursos ofrecidos y demostrar las máximas capacidades dentro de un ambiente de alta disponibilidad
+concurrentemente, pero con la propuesta que habíamos planteado en la táctica de mantener múltiples copias de datos, maximizaríamos
+la capacidad de respuestas a los usuarios mejorando incluso los tiempos ofrecidos en los ASR.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs28.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs29.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Con las tácticas aplicadas acorde a lo planteado en los diseños, logramos cumplimos a cabalidad cada uno de los
+escenarios de pruebas establecidos.
+
+<div class="subtitle-separator"></div>
+
+<h5>Booking microservice</h5>
+
+<div class="subtitle-separator"></div>
+
+Los resultados obtenidos probando el microservicio de reservas fueron satisfactorios cumpliendo con 1000 usuarios concurrentes
+por segundo durante 10 segundos. La siguiente gráfica indica el comportamiento del microservicio en 2 pruebas diferentes
+realizadas durante tiempos diferentes. Obteniendo una respuesta de hasta máximo 2 segundos. Para la prueba se utilizaron
+las herramientas soap ui, jmeter y new relic. Se observó que el microservicio de reservas obtuvo mejor rendimiento respecto
+al anterior. Esto debido a que el procesamiento en la base de datos es solo la actualización de un estado a "reservado".
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs210.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs211.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint2/imgs212.png" alt="Booking Rest Request Search" width="90%">
+</div>

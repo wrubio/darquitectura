@@ -1,0 +1,54 @@
+<div class="component-title">
+  <h1>Diseño Del Experimento Sprint 02</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección deseamos determinar si las decisiones de arquitecturas tomadas hasta el momento van por el camino que
+deseamos, para esto presentaremos el diseño del experimento del sprint 02 que está enfocado en el atributo de calidad de escalabilidad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Diseño Del Experimento</h4>
+
+<div class="subtitle-separator"></div>
+
+<table width="100%">
+  <tr>
+    <th colspan="2">Pruebas De Estilos Y Tácticas De Latencia Proyecto NIDOO</th>
+  </tr>
+  <tr>
+    <td><b>Propósito</b></td>
+    <td>Este experimento nos ayudará a identificar y validar más claramente los puntos de sensibilidad, comportamiento y eficiencia del sistema al procesar usuarios concurrentes durante determinado tiempo y ajustar los diseños de arquitectura implementado estilos y tácticas para favorecer la escalabilidad.</td>
+  </tr>
+  <tr>
+    <td><b>Resultados esperados</b></td>
+    <td>Se espera que a finalizar el experimento los resultados cumplan con los criterios de aceptación de las ASRs 17, 18 y 19 y determinar cuáles son los componentes críticos de escalabilidad. </td>
+  </tr>
+  <tr>
+    <td><b>Recursos requeridos</b></td>
+    <td>
+      <ul>
+        <li><b>Plataforma como servicio (PaaS):</b> Heroku </li>
+        <li>mLab MongoDB</li>
+        <li>Mongoose</li>
+        <li>Angular</li>
+        <li>NodeJS</li>
+        <li>SoapUI</li>
+        <li>New Relic</li>
+        <li>Hardware: Ubuntu 18.x con 518MB RAM</li>
+        <li>RabbitMQ</li>
+        <li>Apollo server</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><b>Elementos de arquitectura involucrados</b></td>
+    <td>Los ASRs asociados son los siguientes: 17, 18 y 19. Se verán involucrados el cliente web, el microservicio de booking, el microservicio de búsqueda, el resolver (Apollo) que se encargara de distribuir las tareas en los microservicios, bases de datos NoSQL (MongoDB) y un componente de mensajería asíncrona (RabbitMQ). Estos pueden ser vistos en las vistas: funcional, de datos y Asignación que están actualizados en el siguiente link: <a href="#" routerLink="/darqSprint2">Diseño de arquitectura</a> </td>
+  </tr>
+  <tr>
+    <td><b>Esfuerzo Estimado</b></td>
+    <td>Se estima que el tiempo a dedicar para la construcción del experimento, teniendo en cuenta la curva de aprendizaje de las nuevas tecnologías, es de 4 horas diarias por 3 desarrolladores en 1 semana.</td>
+  </tr>
+</table>

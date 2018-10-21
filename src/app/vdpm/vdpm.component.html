@@ -1,0 +1,63 @@
+<div class="component-title">
+  <h1>5.5.4. Payments Microservice</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.5.4.1. Modelo De Despliegue</h5>
+
+<p class="text">
+  Se especifican asignaciones de ejecución para los diferentes componentes considerando latencia y escalabilidad:
+</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td width="20%"><b>Cluster Cache: </b></td>
+      <td width="80%">Contendrá instancias de bases de datos para manejar caching de los datos y evitar llamadas innecesarias a la base de datos.</td>
+    </tr>
+    <tr>
+      <td width="20%"><b>Cluster MQ: </b></td>
+      <td width="80%">Dispondrá colas de mensajería para el almacenamiento de los mensajes entre el componente payment microservice y la pasarela de datos. de esta forma evitamos perdida de mensajes y se podrá asignar tiempos para que sean atendidos os mensajes y mejorar e rendimiento, Las conexiones de este componente son tipo MQ</td>
+    </tr>
+    <tr>
+      <td width="20%"><b>Heroku: </b></td>
+      <td width="80%">Contendrá instancias del microservicio de pagos ejecutadas sobre NodeJS y el orquestador de microservicios.</td>
+    </tr>
+    <tr>
+      <td width="20%"><b>Apollo server: </b></td>
+      <td width="80%">Instancia para orquestar la ejecución de lo microservicios.</td>
+    </tr>
+    <tr>
+      <td width="20%"><b>Clúster MongoDB: </b></td>
+      <td width="80%">Contendrá instancias de bases de datos MongoDB.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Despliegue</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/payment/despliegue.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

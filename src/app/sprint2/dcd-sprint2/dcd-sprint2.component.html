@@ -1,0 +1,25 @@
+<div class="component-title">
+  <h1>Decisiones Críticas De Diseño Sprint 02</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Según las ARS consideradas (17, 18, 19), los servicios críticos que componen la mayoría de la operación de Nidoo son las
+búsquedas y reservas de parqueaderos. Si uno de estos componentes (Search microservice y Booking microservice) fallara,
+la actividad principal del sistema no estará disponible generando perdidas económicas y problemas de reputación a Nidoo
+ocasionando perdidas de clientes y oferentes.
+
+<div class="subtitle-separator"></div>
+
+Las bases de datos asignadas a cada microservicio del punto anterior son críticas para el su funcionamiento de forma correcta.
+Por esta razón cada microservicio tiene su propia instancia de bases de datos. De esta forma favorecemos la escalabilidad al
+percibir aumento en la concurrencia en el sistema.
+
+<div class="subtitle-separator"></div>
+
+<h5>Punto De Sensibilidad</h5>
+
+Por la anterior definimos que un punto de sensibilidad del diseño de arquitectura es la base de datos.
+Teniendo en cuenta este punto de sensibilidad, relazaremos los experimentos orientados al atributo de calidad escalabilidad
+par el presente sprint.

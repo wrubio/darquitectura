@@ -1,0 +1,44 @@
+<div class="component-title">
+  <h1>5.3.4. Payments Microservice</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.3.4.1. Modelo De Entidad Relación</h5>
+
+<p class="text">
+  El modelo a continuación representa las entidades necesarias para el microservicio de pagos:
+</p>
+
+<table>
+  <tbody>
+  <tr>
+    <td width="100%">Una persona(cliente) podrá tener muchos pagos asociados a parqueaderos.</td>
+  </tr>
+  <tr>
+    <td width="100%">En la información del pago se almacenarán los valores del pago con descuentos e impuestos.</td>
+  </tr>
+  <tr>
+    <td width="100%">El tipo de pago almacenara si es con tarjeta de crédito, PST, etc.</td>
+  </tr>
+  <tr>
+    <td width="100%">Se almacenará información del proveedor de pagos para que facilite al microservicio las configuraciones necesarias para que sean asignadas a la cola MQ(RabbitMQ) que corresponda.</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama" width="100%">
+  <tr>
+    <th>Diargrama - Modelo De Entidad Relación</th>
+  </tr>
+  <tr>
+    <td width="100%">
+      <div class="img1">
+        <img src="./assets/img/payment/informacion.png" alt="Vista De Información" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>

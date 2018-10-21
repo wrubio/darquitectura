@@ -1,0 +1,24 @@
+<div class="component-title">
+  <h1>Análisis Y Conclusiones Del Experimento Sprint 01</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los análisis de los resultados obtenidos en la experimentación de los puntos de sensibilidad que definimos para el sprint 01 y que están enfocado en el atributo de calidad de latencia
+
+<div class="subtitle-separator"></div>
+
+<h4>Análisis Y Conclusiones Del Experimento De Latencia</h4>
+
+<br>
+
+Una vez terminado el experimento consideramos que los resultados fueron satisfactorios y se va a dejar la arquitectura como está. La respuesta está por debajo del tiempo de latencia definido en los ASRs. Hay que considerar que las pruebas se hicieron sobre un ambiente controlado y con únicamente 105.000 registros para las consultas. Puede que con la expansión estos números crezcan. De igual manera, el sistema respondió a consultas de parqueaderos cercanos a la posición dada de manera satisfactoria. Tampoco parece tener problemas actualizando el estado de la reserva.
+
+<br><br>
+
+Por el otro lado, hay que tener en cuenta que más o menos el 75% del tiempo de latencia lo está asumiendo la base de datos. Las pruebas se hicieron con una versión gratuita de MLab pero en producción, habría que incluirle más recursos a este servicio.
+
+<br><br>
+
+Otra cosa que habría que considerar en un ambiente de productivo es tener un cluster de bases de datos NoSql para mejorar el performance de los servicios debido a que la mayor carga se la lleva este recurso, adicionalmente con la implementación del servidor de caché aliviaría significativamente las cargas hacia la base de datos, con esto logramos que los servicios estén siempre llegando a la base de datos para retornar alguna información que no se encuentre en cambio constante.

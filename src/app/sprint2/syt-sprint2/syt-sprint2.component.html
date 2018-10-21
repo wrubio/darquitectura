@@ -1,0 +1,78 @@
+<div class="component-title">
+  <h1>Estilos Y Tácticas Sprint 02</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los estilos y tácticas de arquitecturas que hemos desarrollado durante el transcurso del
+desarrollo de la arquitectura del sistema. Nuestro objetivo es mostrar las razones por la cual hemos tomado los estilos y
+tácticas de arquitectura para el sprint 02 donde trabajamos el atributo de calidad escalabilidad.
+
+<div class="subtitle-separator"></div>
+
+<h5>Estilos De Arquitectura Sprint 02</h5>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Estilo</th>
+    <th>Justificación</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td width="35%">Service-Oriented Architecture</td>
+    <td width="65%">Este estilo se propuso porque nuestro diseño está basado en microservicios, logrando que los componentes de negocios se expongan como servicios, adicional también permite separar lógica y recursos para mejorar el rendimiento.</td>
+  </tr>
+  <tr>
+    <td width="35%">Lambda</td>
+    <td width="65%">	Este estilo se propuso porque a través de microservicios podemos mejorar el rendimiento logrando separar las capas para procesar por lotes con herramientas de consumo de flujo.</td>
+  </tr>
+  <tr>
+    <td width="35%">3-Tier</td>
+    <td width="65%">Este estilo se propuso porque nos permite dividir la aplicación en capas, logrando que la capa de front solo se dedique a renderizar independiente al canal al cual sea consumido, las APIs o microservicios proveen la lógica de los negocios y el modelo de datos que se encarga de la persistencia de la información.</td>
+  </tr>
+  <tr>
+    <td width="35%">Balanceador de carga + Nodos independientes + escalabilidad de almacenamiento</td>
+    <td width="65%">Este estilo se propuso ya que por medio del balanceador nos permite distribuir la carga a las diferentes instancias que ejecutan réplicas de cada uno de los microservicios. Estas instancias son stateless y adicionalmente comparten un cluster de bases de datos escalables horizontal y verticalmente.</td>
+  </tr>
+  <tr>
+    <td width="35%">Microservices Architecture</td>
+    <td width="65%">Este estilo se propuso porque queremos dividir cada componente funcional en servicios autónomos independientes para así dividir la carga y aumentar la cantidad de instancias corriendo sobre los microservicios que lo necesiten.</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h5>Tácticas De Arquitectura Sprint 01</h5>
+
+<div class="subtitle-separator"></div>
+
+<table style="width:100%">
+  <tr>
+    <th  scope="col" colspan="2" width="50%">Tactica</th>
+    <th width="50%">Descripcion</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Control de la demanda de recursos</td>
+    <td>Incrementar eficiencia del recursos</td>
+    <td>Esta táctica se propuso porque se pretende lograr la mayor eficiencia de los servicios con los mínimos recursos, para esto contamos con la implementación de microservicios para dividir las cargas y solo incrementar aquellas que requieran y no toda la aplicación en caso de ser un monolito. </td>
+  </tr>
+  <tr>
+    <td>Reducir overhead</td>
+    <td>Esta táctica se propuso porque a través de una estrategia de contenerización nos permiten distribuir la carga de procesamiento logrando que una mayor eficiencia en el procesamiento y consumo de los servicios expuestos.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Gestionar recursos</td>
+    <td>Mantener múltiples copias de cómputos</td>
+    <td>Esta táctica se propuso porque queremos tener una elasticidad de infraestructura que nos permita crecer horizontal y verticalmente automáticamente, así como también cuando las cargas disminuyan así mismo las capacidades de cómputo para evitar sobrecostos en la operación.</td>
+  </tr>
+  <tr>
+    <td>Mantener múltiples copias de datos</td>
+    <td>Esta táctica se propuso porque uno de los principios fundamentales para mejorar el rendimiento es utilizar caché y esta es una de las ventajas de esta táctica, así como también cabe resaltar que se pueden tener múltiples copias que se utilizaran en modo lectura para agilizar los proceso y no afectar el rendimiento de la base maestra.</td>
+  </tr>
+  <table>

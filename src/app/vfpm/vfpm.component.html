@@ -1,0 +1,38 @@
+<div class="component-title">
+  <h1>5.2.4. Payments Microservice</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.2.4.1. Modelo Component Conector</h5>
+
+<p class="text">
+  Microservicio encargado de enviar los datos de pago del parqueadero a la pasarela de pagos. Para este microservicio se decidió utilizar un componente para mensajería asíncrona (MQ component), de esta manera se almacenarán los mensajes para que sean atendidos por el componente de pagos. Este microservicio almacenara en la base de datos la información de las transacciones para tener una bitácora con los estados de los pagos.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcional.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

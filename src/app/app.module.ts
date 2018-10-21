@@ -24,9 +24,9 @@ import { DexSprint1Component } from './sprint1/dex-sprint1/dex-sprint1.component
 import { RexSprint1Component } from './sprint1/rex-sprint1/rex-sprint1.component';
 import { RycSprint1Component } from './sprint1/ryc-sprint1/ryc-sprint1.component';
 import { Retro1Component } from './sprint1/retro1/retro1.component';
-import { VfpmComponent } from './vfpm/vfpm.component';
-import { VdpmComponent } from './vdpm/vdpm.component';
-import { VipmComponent } from './vipm/vipm.component';
+import { VfpmComponent } from './paymentMicroservice/vfpm/vfpm.component';
+import { VdpmComponent } from './paymentMicroservice/vdpm/vdpm.component';
+import { VipmComponent } from './paymentMicroservice/vipm/vipm.component';
 import { AsrcComponent } from './sprint2/asrc/asrc.component';
 import { DarqSprint2Component } from './sprint2/darq-sprint2/darq-sprint2.component';
 import { DcdSprint2Component } from './sprint2/dcd-sprint2/dcd-sprint2.component';
@@ -36,6 +36,16 @@ import { RexpSprint2Component } from './sprint2/rexp-sprint2/rexp-sprint2.compon
 import { AycSprint2Component } from './sprint2/ayc-sprint2/ayc-sprint2.component';
 import { Retro2Component } from './sprint2/retro2/retro2.component';
 import { DarqSprint1Component } from './sprint1/darq-sprint1/darq-sprint1.component';
+import { VdsmComponent } from './searchMicroservice/vdsm/vdsm.component';
+import { VfsmComponent } from './searchMicroservice/vfsm/vfsm.component';
+import { VismComponent } from './searchMicroservice/vism/vism.component';
+import { ViumComponent } from './userMicroservices/vium/vium.component';
+import { VdumComponent } from './userMicroservices/vdum/vdum.component';
+import { VdfmComponent } from './userMicroservices/vdfm/vdfm.component';
+import { VfbmComponent } from './bookingMicroservice/vfbm/vfbm.component';
+import { VibmComponent } from './bookingMicroservice/vibm/vibm.component';
+import { VdbmComponent } from './bookingMicroservice/vdbm/vdbm.component';
+import { VcontexComponent } from './vcontex/vcontex.component';
 
 
 const appRoutes: Routes = [
@@ -213,6 +223,66 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Resultado Experimentos Sprint 02'
         },
+      },
+      {
+        path: 'vfsm', component: VfsmComponent,
+        data: {
+          breadcrumb: 'Vista Funcional Searsh Microservice'
+        },
+      },
+      {
+        path: 'vdsm', component: VdsmComponent,
+        data: {
+          breadcrumb: 'Vista Despliegue Searsh Microservice'
+        },
+      },
+      {
+        path: 'vism', component: VismComponent,
+        data: {
+          breadcrumb: 'Vista Información Searsh Microservice'
+        },
+      },
+      {
+        path: 'vfum', component: VdfmComponent,
+        data: {
+          breadcrumb: 'Vista Información User Microservice'
+        },
+      },
+      {
+        path: 'vdum', component: VdumComponent,
+        data: {
+          breadcrumb: 'Vista Despliegue User Microservice'
+        },
+      },
+      {
+        path: 'vium', component: ViumComponent,
+        data: {
+          breadcrumb: 'Vista Información User Microservice'
+        },
+      },
+      {
+        path: 'vfbm', component: VfbmComponent,
+        data: {
+          breadcrumb: 'Vista Información Booking Microservice'
+        },
+      },
+      {
+        path: 'vdbm', component: VdbmComponent,
+        data: {
+          breadcrumb: 'Vista Despliegue Booking Microservice'
+        },
+      },
+      {
+        path: 'vibm', component: VibmComponent,
+        data: {
+          breadcrumb: 'Vista Información Booking Microservice'
+        },
+      },
+      {
+        path: 'vcontex', component: VcontexComponent,
+        data: {
+          breadcrumb: 'Vista De Contexto'
+        },
       }
     ],
   }
@@ -250,7 +320,17 @@ const appRoutes: Routes = [
     RexpSprint2Component,
     AycSprint2Component,
     Retro2Component,
-    DarqSprint1Component
+    DarqSprint1Component,
+    VdsmComponent,
+    VfsmComponent,
+    VismComponent,
+    ViumComponent,
+    VdumComponent,
+    VdfmComponent,
+    VfbmComponent,
+    VibmComponent,
+    VdbmComponent,
+    VcontexComponent
   ],
   imports: [
     BrowserModule,

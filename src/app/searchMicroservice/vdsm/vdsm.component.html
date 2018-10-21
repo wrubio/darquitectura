@@ -1,0 +1,48 @@
+<div class="component-title">
+  <h1>5.5.2. Search Microservice</h1>
+  <h3>Vista De Despliegue</h3>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.5.2.1. Modelo De Asignación</h5>
+
+<p class="text">
+  En este modelo ya hacemos evidente dónde va a estar alojado cada uno de los componentes del microservicio y cómo éstos
+  se van a comunicar. El resolver Apollo Server va a correr en 1 o 3 instancias dependiendo de la demanda.
+  Este se comunica resuelve el query comunicándose con el microservicio de búsqueda median RESTful requests.
+  El microservicio de búsqueda también va a estar corriendo de 1 a 3 instancia dependiendo de la demanda. Estas
+  instancias serán dynos standard de heroku que corren Ubuntu 18.x y tienen alrededor de 512MB de RAM cada uno.
+  <br><br>
+  Por el otro lado, se tiene un cluster de bases de datos no relacionales MongoDB con RAM Variable con
+  alrededor de 1GB de almacenamiento. Estos son escalan horizontal y verticalmente dependiendo de la demanda. El cluster
+  lo va a proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de
+  500MB. Este también escala con base en la demanda.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Asignación</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/search/imgsr3.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

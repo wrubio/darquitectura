@@ -1,0 +1,43 @@
+<div class="component-title">
+  <h1>5.2.5. User Microservice</h1>
+  <h3>Vista Funcional</h3>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.2.5.1. Modelo Component Conector</h5>
+
+<p class="text">
+  En este modelo vemos cómo se comunican los diferentes componentes del microservicio de usuario de parqueaderos.
+  Se puede notar a través de diferentes query utilizando graphql al resolver, un Apollo Server,
+  quien se comunica con el componente encargado de hablar mediante un ORM con la base de datos y el caché para
+  recuperar la información. El caché solo se aplicará para realizar consultas al usuario y recuperar contraseña,
+  en caso contrario se realizará una invocación directa a la base de datos para que resuelva la operación.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista funcional microservicio User" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/user/user1.png" alt="Vista funcional microservicio User" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

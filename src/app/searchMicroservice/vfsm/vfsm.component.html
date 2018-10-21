@@ -1,0 +1,43 @@
+<div class="component-title">
+  <h1>5.2.2. Search Microservice</h1>
+  <h3>Vista Funcional</h3>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.2.2.1. Modelo Component Conector</h5>
+
+<p class="text">
+  En este modelo vemos cómo se comunican los diferentes componentes del microservicio de búsqueda de parqueaderos.
+  Podemos ver que el cliente le pasa un query de graphql al resolver, un Apollo Server, quien se comunica con el componente encargado
+  de comunicarse, mediante un ORM, con la base de datos y/o el caché para resolver la consulta. Si es una consulta por un
+  criterio estático como la localidad, el ORM se comunica directamente con el caché, de lo contrario le pide a la BD que
+  resuelva la operación
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/search/imgsr2.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/search/imgsr1.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+
+
+

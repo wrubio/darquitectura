@@ -1,0 +1,91 @@
+<div class="component-title">
+  <h1>5.1. Vista De Contexto</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.1.1. Diagrama De Contexto</h5>
+
+<p class="text">
+  En esta sección mostramos la vista de contexto donde  identificamos los usuarios del sistema de NIDOO,
+  que son los Usuarios finales (Clientes) y los oferentes (Quienes renta un espacio de parqueo). También mostramos
+  los componentes con los que el sistema va a interactuar y la relación entre ellos.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Modelo Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista Contexto" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img class="modal-img" src="./assets/img/contexto/contexto1.png" alt="Vista Contexto" width="90%" (click)="openVerticallyCentered(content)">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+El primer componente que encontramos es el cliente consume servicios externos que exponen mapas como los de Google maps y un
+sistema de autenticación como puede ser el de Facebook, Google, etc. Este se comunica con un componente que resuelve u
+orquesta la ejecución de los microservicios llamado apollo.
+
+<div class="subtitle-separator"></div>
+
+Los principales microservicios que definimos en nuestro diseño son los siguientes:
+
+<div class="subtitle-separator"></div>
+
+<ul>
+  <li>
+    <b>Search Microservice:</b> <br>
+    Microservicio encargado de hacer las consultas de los parqueaderos por diferentes criterios.
+  </li>
+  <li>
+    <b>Booking Microservice:</b> <br>
+    Microservicio encargado hacer del CRUD de una reserva.
+  </li>
+  <li>
+    <b>Payment Microservice:</b> <br>
+    Microservicio encargado de enviar los datos de pago del parqueadero a la pasarela de pagos
+  </li>
+  <li>
+    <b>User Microservice:</b> <br>
+    Microservicio encargado de hacer consultas al usuario para identificar si se encuentra activo, los vehículos asociados,
+    si presenta presenta alguna reserva o algún tipo de bloqueo como por inactividad, por mora, etc.
+    Así como también expondrá el registro de nuevos usuarios, recuperar clave, darle de baja y la modificación de sus atributos.
+  </li>
+</ul>
+
+<div class="subtitle-separator"></div>
+
+Cada uno de estos microservicios se va a comunicar con unos componentes externos que son un CRM, uno de
+contabilidad, uno de marketing que actualmente poseen, el sistema legado de NIDOO que actualmente poseen,
+un sistema de mensajería para comunicar los eventos que requieran confirmación de parte y parte de los
+usuarios de NIDOO, así como los correos y para finalizar un sistemas de pagos.
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Modelo Componente Conector</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <img src="./assets/img/contexto/contexto1.png" alt="Vista Contexto" width="100%">
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cerrar</button>
+  </div>
+</ng-template>
+

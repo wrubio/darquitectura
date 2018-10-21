@@ -38,17 +38,17 @@
         <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
         <div class="side-sublinks">
           <ul>
-            <li class="p-link" routerLink=""><span class="sidebar-title">5.1. Vista De Contexto</span></li>
+            <li class="p-link" routerLink="/vcontex"><span class="sidebar-title">5.1. Vista De Contexto</span></li>
             <li class="p-link level2">
               <span class="sidebar-title">5.2. Vista De Funcionalidad</span>
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
               <div class="side-sublinks sub-level2">
                 <ul>
                   <li routerLink=""><span class="sidebar-title">5.2.1. General</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.2.2. Search Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.2.3. Booking Microservice</span></li>
+                  <li routerLink="/vfsm"><span class="sidebar-title">5.2.2. Search Microservice</span></li>
+                  <li routerLink="/vfbm"><span class="sidebar-title">5.2.3. Booking Microservice</span></li>
                   <li routerLink="/vfpm"><span class="sidebar-title">5.2.4. Payments Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.2.5. User Miscroservice</span></li>
+                  <li routerLink="/vfum"><span class="sidebar-title">5.2.5. User Miscroservice</span></li>
                 </ul>
               </div>
             </li>
@@ -58,13 +58,14 @@
               <div class="side-sublinks sub-level2">
                 <ul>
                   <li routerLink=""><span class="sidebar-title">5.3.1. General</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.3.2. Search Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.3.3. Booking Microservice</span></li>
+                  <li routerLink="/vism"><span class="sidebar-title">5.3.2. Search Microservice</span></li>
+                  <li routerLink="/vibm"><span class="sidebar-title">5.3.3. Booking Microservice</span></li>
                   <li routerLink="/vipm"><span class="sidebar-title">5.3.4. Payments Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.3.5. User Miscroservice</span></li>
+                  <li routerLink="/vium"><span class="sidebar-title">5.3.5. User Miscroservice</span></li>
                 </ul>
               </div>
             </li>
+            <!--
             <li class="p-link level2">
               <span class="sidebar-title">5.4. Vista De Concurrencia</span>
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
@@ -78,16 +79,17 @@
                 </ul>
               </div>
             </li>
+            -->
             <li class="p-link level2">
-              <span class="sidebar-title">5.5. Vista De Despliegue</span>
+              <span class="sidebar-title">5.4. Vista De Despliegue</span>
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
               <div class="side-sublinks sub-level2">
                 <ul>
-                  <li routerLink=""><span class="sidebar-title">5.5.1. General</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.5.2. Search Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.5.3. Booking Microservice</span></li>
-                  <li routerLink="/vdpm"><span class="sidebar-title">5.5.4. Payments Microservice</span></li>
-                  <li routerLink=""><span class="sidebar-title">5.5.5. User Miscroservice</span></li>
+                  <li routerLink=""><span class="sidebar-title">5.4.1. General</span></li>
+                  <li routerLink="/vdsm"><span class="sidebar-title">5.4.2. Search Microservice</span></li>
+                  <li routerLink="/vdbm"><span class="sidebar-title">5.4.3. Booking Microservice</span></li>
+                  <li routerLink="/vdpm"><span class="sidebar-title">5.4.4. Payments Microservice</span></li>
+                  <li routerLink="/vdum"><span class="sidebar-title">5.4.5. User Miscroservice</span></li>
                 </ul>
               </div>
             </li>
@@ -105,16 +107,16 @@
         <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
         <div class="side-sublinks">
           <ul>
-            <li class="p-link" routerLink=""><span class="sidebar-title">General</span></li>
+            <li class="p-link" routerLink="/vcontex"><span class="sidebar-title">General</span></li>
             <li class="p-link level2">
               <span class="sidebar-title">Search Microservice</span>
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
               <div class="side-sublinks sub-level2">
                 <ul>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista Funcional</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Despliegue</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Información</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li>
+                  <li class="p-link" routerLink="/vfsm"><span class="sidebar-title">Vista Funcional</span></li>
+                  <li class="p-link" routerLink="/vdsm"><span class="sidebar-title">Vista De Despliegue</span></li>
+                  <li class="p-link" routerLink="/vism"><span class="sidebar-title">Vista De Información</span></li>
+                  <!-- <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li> -->
                 </ul>
               </div>
             </li>
@@ -123,10 +125,10 @@
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
               <div class="side-sublinks sub-level2">
                 <ul>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista Funcional</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Despliegue</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Información</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li>
+                  <li class="p-link" routerLink="/vfbm"><span class="sidebar-title">Vista Funcional</span></li>
+                  <li class="p-link" routerLink="/vdbm"><span class="sidebar-title">Vista De Despliegue</span></li>
+                  <li class="p-link" routerLink="/vibm"><span class="sidebar-title">Vista De Información</span></li>
+                  <!-- <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li> -->
                 </ul>
               </div>
             </li>
@@ -138,7 +140,7 @@
                   <li class="p-link" routerLink="/vfpm"><span class="sidebar-title">Vista Funcional</span></li>
                   <li class="p-link" routerLink="/vdpm"><span class="sidebar-title">Vista De Despliegue</span></li>
                   <li class="p-link" routerLink="/vipm"><span class="sidebar-title">Vista De Información</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li>
+                  <!-- <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li> -->
                 </ul>
               </div>
             </li>
@@ -147,10 +149,10 @@
               <div class="sidebar-arrow"><i class="fas fa-caret-down"></i></div>
               <div class="side-sublinks sub-level2">
                 <ul>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista Funcional</span></li>
-                  <li class="p-link"routerLink=""><span class="sidebar-title">Vista De Despliegue</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Información</span></li>
-                  <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li>
+                  <li class="p-link" routerLink="/vfum"><span class="sidebar-title">Vista Funcional</span></li>
+                  <li class="p-link"routerLink="/vdum"><span class="sidebar-title">Vista De Despliegue</span></li>
+                  <li class="p-link" routerLink="/vium"><span class="sidebar-title">Vista De Información</span></li>
+                  <!-- <li class="p-link" routerLink=""><span class="sidebar-title">Vista De Concurrencia</span></li> -->
                 </ul>
               </div>
             </li>

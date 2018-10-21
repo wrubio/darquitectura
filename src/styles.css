@@ -66,6 +66,14 @@ td {
   background-color: #FFFFFF;
   border-radius: 4px;
 }
+.modal-img {
+  cursor: pointer;
+}
+@media only screen and (min-width: 769px) {
+  .modal-lg {
+    max-width: 1000px !important;
+  }
+}
 @media only screen and (max-width: 768px) {
   .h1, h1 {
     font-size: 2rem !important;

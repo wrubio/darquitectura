@@ -47,6 +47,7 @@ import { VibmComponent } from './bookingMicroservice/vibm/vibm.component';
 import { VdbmComponent } from './bookingMicroservice/vdbm/vdbm.component';
 import { VcontexComponent } from './vcontex/vcontex.component';
 import { AcronimosComponent } from './acronimos/acronimos.component';
+import { ReferencesComponent } from './references/references.component';
 
 
 const appRoutes: Routes = [
@@ -338,7 +339,8 @@ const appRoutes: Routes = [
     VibmComponent,
     VdbmComponent,
     VcontexComponent,
-    AcronimosComponent
+    AcronimosComponent,
+    ReferencesComponent
   ],
   imports: [
     BrowserModule,

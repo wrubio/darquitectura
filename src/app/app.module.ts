@@ -48,6 +48,7 @@ import { VdbmComponent } from './bookingMicroservice/vdbm/vdbm.component';
 import { VcontexComponent } from './vcontex/vcontex.component';
 import { AcronimosComponent } from './acronimos/acronimos.component';
 import { ReferencesComponent } from './references/references.component';
+import { AttrQualityComponent } from './attr-quality/attr-quality.component';
 
 
 const appRoutes: Routes = [
@@ -291,6 +292,18 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Conveciones Del Documento'
         },
+      },
+      {
+        path: 'references', component: ReferencesComponent,
+        data: {
+          breadcrumb: 'Referencias'
+        },
+      },
+      {
+        path: 'attrQuality', component: AttrQualityComponent,
+        data: {
+          breadcrumb: 'Atributos De Calidad'
+        },
       }
     ],
   }
@@ -340,7 +353,8 @@ const appRoutes: Routes = [
     VdbmComponent,
     VcontexComponent,
     AcronimosComponent,
-    ReferencesComponent
+    ReferencesComponent,
+    AttrQualityComponent
   ],
   imports: [
     BrowserModule,

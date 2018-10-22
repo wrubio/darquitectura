@@ -9,7 +9,10 @@
 <h5>5.2.3.1. Modelo Component Conector</h5>
 
 <p class="text">
-  En este modelo...
+  En este diagrama vemos como el microservicio manda mensajes a una cola de rabbitMQ para escalar mejor ya que no
+  pierde tiempo en actualizar el estado del parqueadero en el microservicio de búsqueda o el de pagos. Puede hacer
+  estas operaciones de forma asincrónica y responder o liberarse mucho más rápido de sus peticiones. Por el otro lado
+  vemos cómo puede hacer uso del caché para evitar saturar la base de datos.
 </p>
 
 <div class="subtitle-separator"></div>

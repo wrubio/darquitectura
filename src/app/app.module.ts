@@ -46,6 +46,7 @@ import { VfbmComponent } from './bookingMicroservice/vfbm/vfbm.component';
 import { VibmComponent } from './bookingMicroservice/vibm/vibm.component';
 import { VdbmComponent } from './bookingMicroservice/vdbm/vdbm.component';
 import { VcontexComponent } from './vcontex/vcontex.component';
+import { AcronimosComponent } from './acronimos/acronimos.component';
 
 
 const appRoutes: Routes = [
@@ -283,6 +284,12 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Vista De Contexto'
         },
+      },
+      {
+        path: 'acronimos', component: AcronimosComponent,
+        data: {
+          breadcrumb: 'Conveciones Del Documento'
+        },
       }
     ],
   }
@@ -330,7 +337,8 @@ const appRoutes: Routes = [
     VfbmComponent,
     VibmComponent,
     VdbmComponent,
-    VcontexComponent
+    VcontexComponent,
+    AcronimosComponent
   ],
   imports: [
     BrowserModule,

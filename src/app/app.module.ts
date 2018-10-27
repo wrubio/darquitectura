@@ -49,6 +49,14 @@ import { VcontexComponent } from './vcontex/vcontex.component';
 import { AcronimosComponent } from './acronimos/acronimos.component';
 import { ReferencesComponent } from './references/references.component';
 import { AttrQualityComponent } from './attr-quality/attr-quality.component';
+import { AsrcDisponibilityComponent } from './sprint3/asrc-disponibility/asrc-disponibility.component';
+import { AycSprint3Component } from './sprint3/ayc-sprint3/ayc-sprint3.component';
+import { DarqSprint3Component } from './sprint3/darq-sprint3/darq-sprint3.component';
+import { DcdSprint3Component } from './sprint3/dcd-sprint3/dcd-sprint3.component';
+import { DexpSprint3Component } from './sprint3/dexp-sprint3/dexp-sprint3.component';
+import { Retro3Component } from './sprint3/retro3/retro3.component';
+import { RexpSprint3Component } from './sprint3/rexp-sprint3/rexp-sprint3.component';
+import { SytSprint3Component } from './sprint3/syt-sprint3/syt-sprint3.component';
 
 
 const appRoutes: Routes = [
@@ -304,6 +312,24 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Atributos De Calidad'
         },
+      },
+      {
+        path: 'asrcDisponibility', component: AsrcDisponibilityComponent,
+        data: {
+          breadcrumb: 'ASRs De Disponibilidad'
+        },
+      },
+      {
+        path: 'sytSprint03', component: SytSprint3Component,
+        data: {
+          breadcrumb: 'Estilos y tácticas sprint 03'
+        },
+      },
+      {
+        path: 'dexpSprint03', component: DexpSprint3Component,
+        data: {
+          breadcrumb: 'Diseño del experimento sprint 03'
+        },
       }
     ],
   }
@@ -354,7 +380,15 @@ const appRoutes: Routes = [
     VcontexComponent,
     AcronimosComponent,
     ReferencesComponent,
-    AttrQualityComponent
+    AttrQualityComponent,
+    AsrcDisponibilityComponent,
+    AycSprint3Component,
+    DarqSprint3Component,
+    DcdSprint3Component,
+    DexpSprint3Component,
+    Retro3Component,
+    RexpSprint3Component,
+    SytSprint3Component
   ],
   imports: [
     BrowserModule,

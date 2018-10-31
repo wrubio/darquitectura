@@ -6,10 +6,16 @@
 
 <div class="title-separator"></div>
 
-<h5>5.5.5.1. Modelo De Asignación</h5>
+<h5>5.5.5.1. Latencia</h5>
+<div class="subtitle-separator"></div>
+<h5>5.5.5.1.1.  Modelo De Asignación</h5>
 
 <p class="text">
-  En este modelo...
+  En este modelo presentamos la comunicación de los diferentes componentes con el microservicio de User, contamos con un
+  resolver Apollo que dependiendo la demanda crea instancias para resolver los request solicitados. También mostramos un
+  cluster de base dados no relacionales, para esto decidimos usar la tecnología de MongoDB el cual permite escalar horizontal y
+  verticalmente dependiendo la demanda. La idea de este modelo es poder mantener los tiempos de respuesta cuando se presenta una
+  alta recurrencia en el sistema.
 </p>
 
 <div class="subtitle-separator"></div>
@@ -34,7 +40,47 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
 
+<h5>5.5.5.2. Disponibilidad</h5>
+<div class="subtitle-separator"></div>
 
+<h5>5.5.5.2.1.  Modelo De Asignación</h5>
 
+<p class="text">
+  Por el otro lado, se tiene un cluster de bases de datos no relacionales administradas con MongoDB con RAM Variable con
+  alrededor de 1GB de almacenamiento. Estos escalan horizontal y verticalmente dependiendo de la demanda. El cluster lo va a
+  proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB.
+  Este también escala con base en la demanda.
+  <br><br>
+  Como parte de la solución para enrutar y gestionar el tráfico del crecimiento horizontal tenemos Load Balancing que nos
+  permite enrutar los requests de los clientes a las diferentes instancias la cual vamos a crecer a medida del volumen de
+  carga al cual vamos a estar operando.
+  <br><br>
+  Otros dos sistemas fundamentales que llegan a hacer parte de la solución es la utilización del monitoreo continúo
+  apoyados de new relic y log de eventos apoyados de Elastic Search, esto con el fin de asegurar el correcto funcionamiento
+  del microservicio y sus componentes en tiempo de ejecución, estos sistemas los adicionamos para que sirvieran de apoyo en
+  la identificación de la salud y el rendimiento de los recursos en ejecución.
+</p>
 
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Asignación</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+        <img src="./assets/img/user/user4.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/user/userd2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>

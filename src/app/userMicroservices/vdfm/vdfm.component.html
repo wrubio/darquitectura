@@ -6,7 +6,10 @@
 
 <div class="title-separator"></div>
 
-<h5>5.2.5.1. Modelo Component Conector</h5>
+<h4>5.2.5.1. Latencia</h4>
+<div class="subtitle-separator"></div>
+
+<h5>5.2.5.1.1. Modelo Component Conector</h5>
 
 <p class="text">
   En este modelo vemos cómo se comunican los diferentes componentes del microservicio de usuario de parqueaderos.
@@ -37,7 +40,40 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
 
+<h4>5.2.5.2. Disponibilidad</h4>
+<div class="subtitle-separator"></div>
 
+<h5>5.2.5.1.2.1. Modelo Component Conector</h5>
 
+<p class="text">
+  En este modelo utilizamos diferentes componentes del microservicio de usuario de parqueaderos para conseguir la disponibilidad
+  ofrecida dentro de los ARS, para esto contamos con un componente de monitor que nos ofrece el registro de los consumos y
+  las cantidades de recursos que se utilizan dentro del microservicio con el fin de comprobar si el microservicio está trabajando
+  correctamente o se están degradando los componentes internos que utiliza, el otro componente es un log de registro que se comunica
+  con el componente del microservicio a través del sistema de colas para evitar que si se presenta algún fallo en el log presentamos
+  afectaciones en el microservicio, por medio de este Log logramos registrar todos los eventos que ocurren en el sistema durante
+  su ejecución, permitiéndonos identificar la salud de los componentes que hacen parte del microservicio.
+</p>
 
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista funcional microservicio User" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/user/userd1.png" alt="Vista funcional microservicio User" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>

@@ -48,6 +48,15 @@
 <h5>5.5.3.2.1 Modelo De Asignación</h5>
 
 <p class="text">
+  Se asigna un clúster de bases de datos no relacionales MongoDB con RAM Variable con alrededor de 1GB de almacenamiento.
+  Estos son escalan horizontal y verticalmente dependiendo de la demanda. El clúster lo va a proveer mLab. Como caché, se
+  va a usar un clúster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB. Este también escala con
+  base en la demanda.
+  <br><br>
+  los componentes de monitoreo (Apollo engine y New Relick) se incluyeron para reportar estados transaccionales y de
+  ejecución de los microservicios. Dependiendo de los eventos se generarán alertas que indicarán una posible falla de los
+  microservicios que afecte su disponibilidad. La asignación de estos componentes estará sujeto a un plan de pagos para
+  los proveedores. Los planes incluyen la disponibilidad de los sistemas.
 </p>
 
 <div class="subtitle-separator"></div>

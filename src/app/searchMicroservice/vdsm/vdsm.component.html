@@ -6,7 +6,10 @@
 
 <div class="title-separator"></div>
 
-<h5>5.5.2.1. Modelo De Asignación</h5>
+<h4>5.5.2.1. Latencia</h4>
+<div class="subtitle-separator"></div>
+
+<h5>5.5.2.1.1. Modelo De Asignación</h5>
 
 <p class="text">
   En este modelo ya hacemos evidente dónde va a estar alojado cada uno de los componentes del microservicio y cómo éstos
@@ -31,7 +34,8 @@
   <tr>
     <td width="20%">
       <div class="img1">
-        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista De Despliegue microservicio Search" width="90%">
+        <img src="./assets/img/user/user2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+        <img src="./assets/img/user/user4.png" alt="Vista De Despliegue microservicio Search" width="90%">
       </div>
     </td>
     <td width="80%">
@@ -42,7 +46,39 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
 
+<h4>5.5.2.2. Disponibilidad</h4>
+<div class="subtitle-separator"></div>
 
+<h5>5.5.2.2.1. Modelo De Asignación</h5>
+
+<p class="text">
+  los componentes de monitoreo (Apollo engine y New Relick) se incluyeron para revisar los estados transaccionales y de
+  ejecución de los microservicios. Dependiendo de los eventos se generarán alertas que indicarán una posible falla de los
+  microservicios que afecte su disponibilidad.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Asignación</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+        <img src="./assets/img/user/user4.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/search/imgsd2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
 
 

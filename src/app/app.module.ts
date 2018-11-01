@@ -330,6 +330,12 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Diseño del experimento sprint 03'
         },
+      },
+      {
+        path: 'darqSprint03', component: DarqSprint3Component,
+        data: {
+          breadcrumb: 'Diseño de arquitectura sprint 03'
+        },
       }
     ],
   }

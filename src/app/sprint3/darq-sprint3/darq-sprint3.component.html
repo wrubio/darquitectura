@@ -1,3 +1,87 @@
-<p>
-  darq-sprint3 works!
-</p>
+<div class="component-title">
+  <h1>Diseño De La Arquitectura Sprint 3</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos el diseño de arquitectura para satisfacer los requerimientos de las ASRs que afectan
+directamente el diseño general de la arquitectura, para esto se ha tenido en cuenta el atributo de calidad de disponibilidad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Diseño De Arquitectura - Disponibilidad</h4>
+
+Para probar tácticas de disponibilidad decidimos utilizar los microservicios de búsqueda y de reserva de parqueadero
+debido a que pertenecen a los ASR más importantes para el negocio y la misión de Nidoo. Al implementar los componentes
+de monitoreo podremos empezar a revisar el comportamiento de los microservicios al inducir varios tipos de fallas. Los
+resultados nos permitirán saber hasta qué punto son tolerantes los microservicios, si los componentes de monitoreo evidentemente
+funcionan para alertar los eventos y programar los procedimientos de recuperación, prevención y continuidad.
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/sprint3/sprint31.png" alt="diagrama Componente Conector" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table width="100%">
+  <tbody>
+  <tr>
+    <td width="25%"><b>Cliente (Web, Mobile):</b></td>
+    <td width="65%">Este componente representa las aplicaciones que consumirán los microservicios. Cada cliente representa un usuario del sistema Nidoo.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Resolver (Apollo):</b></td>
+    <td width="65%">Este componente es el encargado de distribuir las solicitudes de los usuarios entre las diferentes instancias de los microservicios.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Search microservice:</b></td>
+    <td width="65%">Este componente es el encargado de ejecutar lógica de aplicación para la búsqueda de parqueaderos en la base de datos. Se pueden desplegar cuantas instancias sean necesarias para favorecer la escalabilidad y la latencia.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Booking microservice:</b></td>
+    <td width="65%">Este componente es el encargado de ejecutar lógica de aplicación para la reserva de parqueaderos en la base de datos. Se pueden desplegar cuantas instancias sean necesarias para favorecer la escalabilidad y la latencia.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>MongoDB:</b></td>
+    <td width="65%">Este componente es una instancia de bases de datos no relacional para cada instancia de microservicios. Si es necesario se pueden agregar varias instancias de base de datos a un microservicio en caso de verse impactada en desempeño.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>RabbitMQ:</b></td>
+    <td>Este componente es el encargado de almacenar los mensajes generados por el microservicio de búsqueda para que sean procesados por el micro servicio de reservas de forma asíncrona. Se decidió utilizar encolamiento de mensajes para agilizar los tiempos de respuesta cuando los mensajes respuesta son simples (que representen estados, EJ: “solicitud en proceso”).</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>New Relic:</b></td>
+    <td>Este componente se encargará de monitorear el comportamiento transaccional de los microservicios (Bookin y Search) antes de su ejecución.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Apollo Engine</b></td>
+    <td>Este componente será el encargado de monitorear el resolver para evaluar si se puede convertir en punto de falla.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Logs</b></td>
+    <td>Este componente almacenara los logs escritos por los microservicios cuando se presenten determinados eventos. Se evaluarán las fallas y se revisara el desempeño del servidor de logs para alertar fallos del microservicio.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Message Provider</b></td>
+    <td>Es un proveedor externo que enviará los mensajes de alerta generados por los microservicios.</td>
+  </tr>
+  </tbody>
+</table>

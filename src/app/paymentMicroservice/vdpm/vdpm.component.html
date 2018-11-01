@@ -6,7 +6,10 @@
 
 <div class="title-separator"></div>
 
-<h5>5.5.4.1. Modelo De Despliegue</h5>
+<h4>5.5.4.1. Latencia</h4>
+<div class="subtitle-separator"></div>
+
+<h5>5.5.4.1.1. Modelo De Despliegue</h5>
 
 <p class="text">
   Se especifican asignaciones de ejecución para los diferentes componentes considerando latencia y escalabilidad:
@@ -58,7 +61,76 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
 
+<h4>5.5.4.2. Disponibilidad</h4>
+<div class="subtitle-separator"></div>
 
+<h5>5.5.4.2.1. Modelo De Despliegue</h5>
 
+<p class="text">
+  Se especifican asignaciones de ejecución para los diferentes componentes considerando latencia, escalabilidad y disponibilidad:
+</p>
+
+<table>
+  <tbody>
+  <tr>
+    <td width="20%"><b>Cluster Cache: </b></td>
+    <td width="80%">Contendrá instancias de bases de datos para manejar caching de los datos y evitar llamadas innecesarias a la base de datos.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Cluster MQ: </b></td>
+    <td width="80%">Dispondrá colas de mensajería para el almacenamiento de los mensajes entre el componente payment microservice y la pasarela de datos. de esta forma evitamos perdida de mensajes y se podrá asignar tiempos para que sean atendidos os mensajes y mejorar e rendimiento, Las conexiones de este componente son tipo MQ</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Heroku: </b></td>
+    <td width="80%">Contendrá instancias del microservicio de pagos ejecutadas sobre NodeJS y el orquestador de microservicios.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Apollo server: </b></td>
+    <td width="80%">Instancia para orquestar la ejecución de lo microservicios.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Clúster MongoDB: </b></td>
+    <td width="80%">Contendrá instancias de bases de datos MongoDB.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Logs (Logentries):</b></td>
+    <td width="80%">Almacenara los logs generados por el microservicio para tener detalle de los eventos generados y controlar sus fallas.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>New Relic:</b></td>
+    <td width="80%">Se encarga del monitoreo de los eventos transaccionales entrantes al microservicio. Se incluye para monitorear el estado del microservicio antes de su ejecución.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Apollo engine:</b></td>
+    <td width="80%">Se encarga del monitoreo de enrutador de microservicios. Se incluye en el servicio para determinar si el resolver (Apollo server) se convierte en un punto de falla.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Message provider:</b></td>
+    <td width="80%">Es un proveedor de mensajes que se utilizará para enviar alertas de posibles fallos del microservicio.</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Despliegue</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/payment/payd2.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
 

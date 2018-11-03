@@ -1,3 +1,23 @@
-<p>
-  dcd-sprint3 works!
-</p>
+<div class="component-title">
+  <h1>Decisiones Críticas De Diseño Sprint 03</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Para este sprint las ASRs consideradas fueron la 02, 20, 21 y 22. En estás ASRs y en el modelo de operación del sistema los
+principales servicios que por cualquier razón no se encuentren disponibles (Search, User, Reservas) afectarían al diseño de
+arquitectura propuesto además de las pérdidas económicas y de credibilidad que NIDOO brinda a sus clientes.
+<br><br>
+Por lo anterior, para favorecer la disponibilidad del sistema se tomaron varias decisiones críticas. Por ejemplo, el hecho
+de montar monitores específicos por componente para ayudar al diagnóstico y prevención de problemas específicos de cada uno
+de ellos. También contamos con logs en todos los niveles para poder hacer traceback de lo que sucede y identificar patrones
+en las fallas. Por el otro lado utilizamos el patrón producer/consumer con colas de RabbiMQ para evitar perder mensajes
+enviados cuando alguno de los componentes se cae y así evitar problemas de inconcistencia de datos.
+
+
+<div class="subtitle-separator"></div>
+
+<h5>Punto De Sensibilidad</h5>
+
+El punto de sensibilidad a probar es la cola de mensajes y cómo el consumidor se comporta al interpretarlos.

@@ -336,6 +336,30 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Diseño de arquitectura sprint 03'
         },
+      },
+      {
+        path: 'dcdSprint03', component: DcdSprint3Component,
+        data: {
+          breadcrumb: 'Decisiones criticas de diseño sprint 03'
+        },
+      },
+      {
+        path: 'rexpSprint03', component: RexpSprint3Component,
+        data: {
+          breadcrumb: 'Resultado experimentos sprint 03'
+        },
+      },
+      {
+        path: 'aycSprint03', component: AycSprint3Component,
+        data: {
+          breadcrumb: 'Conclusiones experimentos sprint 03'
+        },
+      },
+      {
+        path: 'retroSprint03', component: Retro3Component,
+        data: {
+          breadcrumb: 'Retrospectiva sprint 03'
+        },
       }
     ],
   }

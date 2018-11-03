@@ -20,14 +20,19 @@ deseamos, para esto presentaremos el diseño del experimento del sprint 03 que e
   </tr>
   <tr>
     <td><b>Propósito</b></td>
-    <td>Este experimento pretende satisfacer las necesidades de los usuarios definidas en las ASRs 02, 20, y 21
-      que a través de las tácticas definidas para el diseño de la arquitectura favorezca la disponibilidad del sistema.
+    <td>
+      Este experimento pretende satisfacer las necesidades de los usuarios definidas en las ASRs 02, 20, y 21 que a
+      través de las tácticas definidas para el diseño de la arquitectura favorezca la disponibilidad del sistema.
     </td>
   </tr>
   <tr>
     <td><b>Resultados esperados</b></td>
-    <td>Se espera que a finalizar el experimento los resultados cumplan con los criterios de aceptación de las ASRs 02,
-      20 y 21 y determinar cuáles son los componentes críticos del sistema para el atributo de calidad de disponibilidad.
+    <td>
+      Se espera que a finalizar el experimento los resultados cumplan con los criterios de aceptación de las ASRs 02, 20 y 21 y
+      determinar cuáles son los componentes críticos del sistema para el atributo de calidad de disponibilidad.
+      <br><br>
+      También se espera que aun cuando uno de los componentes se caiga por unos momentos, el resto del servicio no se van a
+      ver interrumpidos y la integridad de la información se va a mantener
     </td>
   </tr>
   <tr>
@@ -56,7 +61,7 @@ deseamos, para esto presentaremos el diseño del experimento del sprint 03 que e
       el microservicio de búsqueda, el resolver (Apollo) que se encargara de distribuir las tareas en los microservicios,
       bases de datos NoSQL (MongoDB), un componente de mensajería asíncrona (RabbitMQ). Para este atributo de calidad se utilizaran
       componente para la gestion de log y monitoreo. Estos se podrán consultar en las vistas: funcional, información y
-      Asignación que están actualizados en el siguiente link: <a href="#" routerLink="/asrcDisponibility">Diseño de arquitectura</a>
+      asignación que se pueden consultar en la sección 5 de este documento.
     </td>
   </tr>
   <tr>

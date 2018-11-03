@@ -23,6 +23,13 @@ td {
   border: 1px solid #D1D5DA;
   padding: 5px 15px;
 }
+.img1 {
+  text-align: center;
+}
+.img1 img {
+  border: 1px solid #99969c;
+  width: 80%;
+}
 .component-title{
   text-align: center;
   padding-top: 25px;

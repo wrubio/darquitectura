@@ -57,6 +57,7 @@ import { DexpSprint3Component } from './sprint3/dexp-sprint3/dexp-sprint3.compon
 import { Retro3Component } from './sprint3/retro3/retro3.component';
 import { RexpSprint3Component } from './sprint3/rexp-sprint3/rexp-sprint3.component';
 import { SytSprint3Component } from './sprint3/syt-sprint3/syt-sprint3.component';
+import { ViewDevelopComponent } from './view-develop/view-develop.component';
 
 
 const appRoutes: Routes = [
@@ -360,6 +361,12 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Retrospectiva sprint 03'
         },
+      },
+      {
+        path: 'developView', component: ViewDevelopComponent,
+        data: {
+          breadcrumb: 'Vista de desarrollo'
+        },
       }
     ],
   }
@@ -418,7 +425,8 @@ const appRoutes: Routes = [
     DexpSprint3Component,
     Retro3Component,
     RexpSprint3Component,
-    SytSprint3Component
+    SytSprint3Component,
+    ViewDevelopComponent
   ],
   imports: [
     BrowserModule,

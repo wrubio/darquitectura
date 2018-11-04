@@ -1,0 +1,99 @@
+<div class="component-title">
+  <h1>5.5. Vista De Desarrollo</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.5.1. Modelo De Paquetes</h5>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <td><b>Back - end (Node Js): </b></td>
+    <td>El siguiente diagrama muestra los paquetes que por defecto deben ser importados en el desarrollo de un microservicio Nidoo. Cada paquete debera ser importado como dependencia usando el administrador de paquetes de Node js (npm). Cada microservicio tendra los siguientes paquetes:</td>
+  </tr>
+  <tr>
+    <td><b>Mongose:</b></td>
+    <td>Paquete js para la la persistencia de datos del microservicio usando ORM. Las clases de definidas con mongose hará, parte de la capa de negocio (BussinesObject). </td>
+  </tr>
+  <tr>
+    <td><b>Redis:</b></td>
+    <td>Paquete para la gestión de los datos que seraán almacenados en cache. Las clases definidas para la gestion del cache de los datos se´ra definido dentro de la capa de utilitarios del microservicio.</td>
+  </tr>
+  <tr>
+    <td><b>Logentries:</b></td>
+    <td>Paquete para el registro de los eventos ocuridos en el microservicio (MEnsajes, asignaciones, resultados, errores, excepciones, ETC) en un log. La configuración del Log seá la capa de recursos.</td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Modelo Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista Contexto" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img class="modal-img" src="./assets/img/contexto/contexto.jpg" alt="Vista Contexto" width="90%" (click)="openVerticallyCentered(content)">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="title-separator"></div>
+
+<h5>5.5.2. Modelo De Capas</h5>
+
+<div class="subtitle-separator"></div>
+
+<p class="text">El siguiente diagrama muestra las capas como se debe estructurar un proyecto para el desarrollo de un microservicio de Nidoo. Cada capa contendrá los siguientes artefactos</p>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <td><b>Capa de negocio (ORM): </b></td>
+    <td>Contendrá las clases ORM que se encargaran de la persistencia de información en la base de datos mongo DB.</td>
+  </tr>
+  <tr>
+    <td><b>Capa de operación (Operation Facade): </b></td>
+    <td>Contendrá las clases con métodos definidos para la ejecución de operaciones en la base de datos (CRUD). Se implementará una sola clase con todos los métodos necesarios para el microservicio.</td>
+  </tr>
+  <tr>
+    <td><b>Capa de Objetos serializados (DTO):</b></td>
+    <td>Contendrá la representación de las clases donde se serializará la información retornada de la capa de operación. Estos objetos serán transmitidos al front - end y los dispositivos móviles.</td>
+  </tr>
+  <tr>
+    <td><b>Capa de recursos:</b></td>
+    <td>Contendrá los recursos de desarrollo necesarios para archivos de propiedades, configuración de logs e imports de bases de datos.</td>
+  </tr>
+  <tr>
+    <td><b>Capa de Utilidades:</b></td>
+    <td>Contendrá Las clases con la representación de los objetos de negocio que serán almacenados en memoria cache.</td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img class="modal-img" src="./assets/img/contexto/contexto.jpg" alt="Vista Contexto" width="90%" (click)="openVerticallyCentered(content)">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<h6>Uso de npm (Node package manager)</h6>
+
+<div class="subtitle-separator"></div>
+
+Durante el desarrollo de los microservicios surgen funcionalizades que son comunes para todos (como logs, codigos de error, interfaces) y que deben ser empaquetados como paquetes npm privados. Esto facilitara el importe de paquetes de software desde otros microservicios y agilizara el proceso de desarrollo.
+
+<div class="subtitle-separator"></div>

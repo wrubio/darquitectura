@@ -42,10 +42,11 @@ ningún momento presentó o se evidenció algún fallo.
 
 <div class="subtitle-separator"></div>
 
-Como parte del experimento y para demostrar su disponibilidad forzamos la detención del servicio de search, cabe
-resaltar que este se encuentra asociado al microservicio de reservas de parqueaderos como se explicó en la vista
-funcional y aclaramos que esta comunicación es asíncrona. Damos como resultado aunque se detuvo el servicio de search
-la cola de mensaje continuó almacenando los mensajes hasta que se pudo restablecer.
+Como parte del experimento y para demostrar su disponibilidad forzamos la detención del servicio de search,
+cabe resaltar que este se encuentra asociado al microservicio de reservas de parqueaderos como se explicó en la vista
+funcional y aclaramos que esta comunicación es asíncrona. Damos como resultado, aunque se detuvo el servicio de search
+la cola de mensaje continuó almacenando los mensajes hasta que se pudo restablecer, adicionalmente el componente de search
+está respondiendo en la búsqueda porque cuenta con un caché que permite dicha disponibilidad.
 
 <div class="subtitle-separator"></div>
 
@@ -71,8 +72,21 @@ En el sistema de colas evidenciamos la baja del servicio y la continuidad de la 
 
 <div class="subtitle-separator"></div>
 
-Con estas pruebas realizadas evidenciamos qué aunque fallen algunos componentes de del sistema,
-podremos asegurar que las transacciones de mayor criticidad puedan ser ejecutadas y terminadas sin ningún contratiempo,
-logrando una alta disponibilidad del sistema, de forma que siempre lograremos que el usuario se encuentre tranquilo que
-todas sus solicitudes fueron atendidas aunque algún componente se encuentre fallando pero teniendo la plena seguridad que
-cuando llegue a su estado normal vuelve a retomar las operaciones que tenía represadas.
+Con estas pruebas realizadas evidenciamos qué aunque fallen algunos componentes de del sistema, podremos asegurar que
+las transacciones de mayor criticidad puedan ser ejecutadas y terminadas sin ningún contratiempo, logrando una alta disponibilidad
+del sistema, de forma que siempre lograremos que el usuario se encuentre tranquilo que todas sus solicitudes fueron atendidas
+aunque algún componente se encuentre fallando pero teniendo la plena seguridad que cuando llegue a su estado normal vuelve a
+retomar las operaciones que tenía represadas.
+
+<div class="subtitle-separator"></div>
+
+
+<div class="img1">
+  <img src="./assets/img/sprint3/sprint38.png" alt="Booking Rest Request Search" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Como última parte de la prueba evidenciamos los monitores, en este caso colocamos una alerta que si superaba una capacidad de
+procesamiento del 80% nos notificara via correo electrónico, esto con el fin de poder reaccionar y monitorear el proceso para
+evitar una posible falla y tener el servicio disponible todo el tiempo.

@@ -107,3 +107,42 @@
 Durante el desarrollo de los microservicios surgen funcionalizades que son comunes para todos (como logs, codigos de error, interfaces) y que deben ser empaquetados como paquetes npm privados. Esto facilitara el importe de paquetes de software desde otros microservicios y agilizara el proceso de desarrollo.
 
 <div class="subtitle-separator"></div>
+
+
+
+
+<h6>Manejo de errores: </h6>
+
+<div class="subtitle-separator"></div>
+
+<ul>
+  <li>
+    Se deberán dar gestión a cualquier evento en el desarrollo que pueda generar un error o excepción. Estos eventos deben ejecutarse de forma síncrona para poder tener una idea que componente de software produjo la falla y poderla controlar de forma inmediata. Así que el uso de “Await” y bloques try y catch son necesarios en el desarrollo.
+
+    <div class="subtitle-separator"></div>
+
+    <div class="img1">
+      <img class="modal-img" src="./assets/img/develop/dev4.png" alt="" style="width: 40%">
+    </div>
+    <br>
+  </li>
+  <li>
+    Mantener un solo objeto de gestión de errores como el registro Logs deberá realizarse a través de objetos dedicados y centralizados. De esta manera se pueden ser llamados por diferentes componentes en el desarrollo del microservicio.
+
+    <div class="subtitle-separator"></div>
+
+    <div class="img1">
+      <img class="modal-img" src="./assets/img/develop/dev5.png" alt="" style="width: 40%">
+    </div>
+    <br>
+  </li>
+</ul>
+
+<div class="subtitle-separator"></div>
+
+<h6>Serialización: </h6>
+
+<div class="subtitle-separator"></div>
+
+Se podrán validar la información serializada que llega a un microservicio a través de archivos Swagger. Estos tendrán la definición exacta (tipos, patrones, enumeraciones, secuencias, validaciones) de la estructura del objeto y de la precisión de los datos que contiene. La ventaja de los archivos swagger es que se ven reducidas las validaciones en la capa de operación del debido a que el serializador de node js interpretará y validará esta estructura antes de ejecutar la lógica de negocio del microservicio.
+

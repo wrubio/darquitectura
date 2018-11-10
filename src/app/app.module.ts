@@ -58,6 +58,7 @@ import { Retro3Component } from './sprint3/retro3/retro3.component';
 import { RexpSprint3Component } from './sprint3/rexp-sprint3/rexp-sprint3.component';
 import { SytSprint3Component } from './sprint3/syt-sprint3/syt-sprint3.component';
 import { ViewDevelopComponent } from './view-develop/view-develop.component';
+import { OperationViewComponent } from './operation-view/operation-view.component';
 
 
 const appRoutes: Routes = [
@@ -367,6 +368,12 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Vista de desarrollo'
         },
+      },
+      {
+        path: 'operationalView', component: OperationViewComponent,
+        data: {
+          breadcrumb: 'Vista de operaciones'
+        },
       }
     ],
   }
@@ -426,7 +433,8 @@ const appRoutes: Routes = [
     Retro3Component,
     RexpSprint3Component,
     SytSprint3Component,
-    ViewDevelopComponent
+    ViewDevelopComponent,
+    OperationViewComponent
   ],
   imports: [
     BrowserModule,

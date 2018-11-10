@@ -1,0 +1,42 @@
+<div class="component-title">
+  <h1>5.6. Vista De Operación</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+<h5>5.6.1. Modelo De Asignación</h5>
+
+<div class="subtitle-separator"></div>
+
+<p class="text">
+  Los ambientes operacionales del sistema Nidoo se asignarán cada uno como un proyecto independiente en Heroku. Estos ambientes serán utilizados durante el proceso de desarrollo de los microservicios y cada uno tendrá una línea de desarrollo (branch) para ser desplegados de forma controlada a través del repositorio repositorio de versionamiento (Git).
+</p>
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img class="modal-img" src="./assets/img/operation/o1.png" alt="" style="width: 70%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<h6><b>Procedimiento de asignación:</b></h6>
+
+<ul>
+  <li>Para cada ambiente se debe crear un nuevo proyecto en Heroku. Este proceso debe ser realizado por el administrador del PaaS en Nidoo.</li>
+  <li>Para cada ambiente se deben asignar los gadgets requeridos para el proyecto: RabbitMQ, New relic, MongoDB, Logentries (Se debe tener en cuenta el costo asociado a estos gadgets).</li>
+</ul>
+
+
+<div class="subtitle-separator"></div>
+
+<h6><b>Procedimiento de usuarios:</b></h6>
+
+
+<ul>
+  <li>Se deben registrar en Heroku los usuarios segun su rol (Desarrollador, tester, arquitecto, gerente de proyecto, etc).</li>
+  <li>Asignar permisos y privilegios de acceso a los usuarios para los componentes definidos por el arquitecto.</li>
+</ul>
+
+

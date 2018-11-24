@@ -59,6 +59,8 @@ import { RexpSprint3Component } from './sprint3/rexp-sprint3/rexp-sprint3.compon
 import { SytSprint3Component } from './sprint3/syt-sprint3/syt-sprint3.component';
 import { ViewDevelopComponent } from './view-develop/view-develop.component';
 import { OperationViewComponent } from './operation-view/operation-view.component';
+import { AsrsSecurityComponent } from './sprint4/asrs-security/asrs-security.component';
+import { DarqSecurityComponent } from './sprint4/darq-security/darq-security.component';
 
 
 const appRoutes: Routes = [
@@ -374,6 +376,18 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Vista de operaciones'
         },
+      },
+      {
+        path: 'srcSecurity', component: AsrsSecurityComponent,
+        data: {
+          breadcrumb: 'ASRs Consideradas Sprin 04'
+        },
+      },
+      {
+        path: 'darqSprint04', component: DarqSecurityComponent,
+        data: {
+          breadcrumb: 'Diseño de arquitectura Sprin 04'
+        },
       }
     ],
   }
@@ -434,7 +448,9 @@ const appRoutes: Routes = [
     RexpSprint3Component,
     SytSprint3Component,
     ViewDevelopComponent,
-    OperationViewComponent
+    OperationViewComponent,
+    AsrsSecurityComponent,
+    DarqSecurityComponent
   ],
   imports: [
     BrowserModule,

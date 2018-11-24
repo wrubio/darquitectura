@@ -1,0 +1,256 @@
+<div class="component-title">
+  <h1>Diseño De La Arquitectura Sprint 4</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos el diseño de arquitectura para satisfacer los requerimientos de las ASRs que afectan
+directamente el diseño general de la arquitectura, para esto se ha tenido en cuenta el atributo de calidad de seguridad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Diseño De Arquitectura - Seguridad</h4>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Componente Conector</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/sprint4/sprint41.png" alt="diagrama Componente Conector" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<table width="100%">
+  <tbody>
+  <tr>
+    <td width="25%"><b>Cliente (Web, Mobile):</b></td>
+    <td width="65%">Este componente representa las aplicaciones que consumirán los microservicios. Cada cliente representa un usuario del sistema Nidoo.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Resolver (Apollo):</b></td>
+    <td width="65%">Este componente es el encargado de distribuir las solicitudes de los usuarios entre las diferentes instancias de los microservicios.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Search microservice:</b></td>
+    <td width="65%">Este componente es el encargado de ejecutar lógica de aplicación para la búsqueda de parqueaderos en la base de datos. Se pueden desplegar cuantas instancias sean necesarias para favorecer la escalabilidad y la latencia.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Booking microservice:</b></td>
+    <td width="65%">Este componente es el encargado de ejecutar lógica de aplicación para la reserva de parqueaderos en la base de datos. Se pueden desplegar cuantas instancias sean necesarias para favorecer la escalabilidad y la latencia.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>MongoDB:</b></td>
+    <td width="65%">Este componente es una instancia de bases de datos no relacional para cada instancia de microservicios. Si es necesario se pueden agregar varias instancias de base de datos a un microservicio en caso de verse impactada en desempeño.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>RabbitMQ:</b></td>
+    <td>Este componente es el encargado de almacenar los mensajes generados por el microservicio de búsqueda para que sean procesados por el micro servicio de reservas de forma asíncrona. Se decidió utilizar encolamiento de mensajes para agilizar los tiempos de respuesta cuando los mensajes respuesta son simples (que representen estados, EJ: “solicitud en proceso”).</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>New Relic:</b></td>
+    <td>Este componente se encargará de monitorear el comportamiento transaccional de los microservicios (Bookin y Search) antes de su ejecución.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Apollo Engine</b></td>
+    <td>Este componente será el encargado de monitorear el resolver para evaluar si se puede convertir en punto de falla.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Logs</b></td>
+    <td>Este componente almacenara los logs escritos por los microservicios cuando se presenten determinados eventos. Se evaluarán las fallas y se revisara el desempeño del servidor de logs para alertar fallos del microservicio.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Message Provider</b></td>
+    <td>Es un proveedor externo que enviará los mensajes de alerta generados por los microservicios.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>API Gateway</b></td>
+    <td>Este se va a encargar de consumir y filtrar todas las solicitudes hechas a los microservicios con el fin de protegerlos y de reducir la superficie de ataque.</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Servidor De Autenticación</b></td>
+    <td>Servidor que resuelve los permisos y refresca el token de autenticación</td>
+  </tr>
+  <tr>
+    <td width="25%"><b>Users Caché (New Relic)</b></td>
+    <td>Sistema de motorización de maquinas que permite tener un control en tiempo real de los recursos disponibles..</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h4>Modelo De Ataque</h4>
+
+<div class="subtitle-separator"></div>
+
+<h5>STRIDE</h5>
+
+Se decidió usar el patrón STRIDE como guía para detectar vulnerabilidades y amenazas que afecten la seguridad de las funcionalidades de los microservicios críticos (Payments - rates) y que pueda generar una no conformidad (reclamos o demandas) por parte de los usurios de NIDOO y que afecte la reputación de la compañía.
+<br><br>
+Se practicarán ataques definidos en STRIDE para los siguientes servicios críticos en cuanto a seguridad:
+<br><br>
+<ul>
+  <li>
+    <b>Payment microservice:</b> Se considera un microservicio crítico porque éste es el encargado de preparar y enviar la informacíon de pago de un parqueadero Nidoo a la pasarela de pagos. La informacíon que se transmite es la siguiente y se considera confidencial:
+    <br><br>
+    <ul>
+      <li>Información del cliente: Nombre, numero de documento, costo del parqueadero, correo electrónico.</li>
+      <li>Información de pago de parqueadero: número de tarjeta débito/crédito, clave segura, costo del parqueadero.</li>
+    </ul>
+  </li>
+  <br>
+  <li>
+    <b>Rates:</b> Se considera un dato crítico para los diferentes microservicios. Este dato define el valor de la tarifa de los parqueaderos para las diferentes localidades. Por consiguiente, se debe asegurar su integridad para evitar modificaciones por atacantes malintencionados.
+  </li>
+</ul>
+
+<div class="subtitle-separator"></div>
+
+A continuación, se detallan los ataques implementados según STRIDE para los componentes mencionados anteriormente mencionados:
+
+<div class="subtitle-separator"></div>
+
+<b>Spoofing (Suplantación):</b> Suplantar la identidad de un cliente no es un riesgo mayor debido a que cada usuario es autónomo en proteger sus pertenencias (Usuarios, tarjetas de crédito, ETC). Pero si un atacante llegase a suplantar el servidor web de NIDOO desviando las tramas a un proxy mediado por el atacante (modalidad de spoofing web o IP) este podría interceptar y almacenar toda la información de los usuarios de NIDOO incluyendo información de pagos.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint42.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Para evitar este tipo de ataque es necesario que el servidor web y de aplicación estén aprobador por una entidad certificadora que demuestre a los usuarios la autenticidad del sitio web de NIDOO a través de HTTPS. Las conexiones desde los dispositivos móviles deberán ir certificadas con TLS con tokens diferentes. En el payload de la información se debe cifrar el usuario y la contraseña de los usuarios para que el sistema pueda reconocer quien que usuario es el que está que accediendo a los microservicios.
+
+<div class="subtitle-separator"></div>
+
+<b>Tampering (modificación de datos):</b> La información confidencial de los usuarios hacia el sistema Nidoo podría se comprometida a manera de interceptación para ser modificada. Si la información que llega al sistema Nidoo no está cifrada, esta podría haber sido comprometida por un atacante tanto en su etapa de transporte como en su etapa de almacenamiento. Por esto es necesario establecer técnicas de cifrado para dificultar en gran medida  a un atacante acceder a ella.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint43.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Para asegurar la información se implementará autenticación de doble canal. La información ira cifrada con AES y llaves de 16 bits. Se implementará autenticación Digest en las cabeceras HTTP. Esto asegurará la información transmitida en el canal y será muy complejo para un atacante acceder a ella.
+
+<div class="subtitle-separator"></div>
+
+<b>Repudiation (No repudio):</b> Es de gran importancia identificar todas las acciones realizadas por los usuarios en el sistema Nidoo. De no hacerlo, la compañía carecerá de información sobre el comportamiento de los usuarios. En caso de quejas o reclamaciones, el sistema debe poder generar los reportes necesarios para determinar la valides de una reclamación. Es importante aclarar que también se pueden monitorear las acciones que toma el sistema que pueden generar errores de ejecución, no necesariamente son los usuarios lo que toman acciones en el sistema.
+<br><br>
+En las tácticas y estilos definidos para disponibilidad se agregaron componentes para mantener una bitácora sobre todos los comportamientos y acciones de los microservicios en cuanto a errores, advertencias, información y acciones de los usuarios.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint44.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+<b>Information disclosure (Divulgación de información):</b> Establecer políticas internas en la compañía para determinar cuál es la información pública y privada que debe ser gestionada por el sistema NIDOO. Cabe aclarar que los acuerdos legales de confidencialidad de los usuarios juegan un papel importante. Debido que no está contemplado que el sistema tome acciones sobre una persona que ejerce labores administrativas. Es importante que los usuarios administrativos y técnicos del sistema Nidoo estén capacitados y advertidos de la gestión de la información. Las políticas y reglamento interno de la empresa son importante para este tipo de ataque.
+<br><br>
+A continuación, se detalla la información que será gestionada por el sistema y que se considera pública o privada.
+<br><br>
+<table>
+  <tr>
+    <th><b>Información pública</b></th>
+    <th><b>Información privada</b></th>
+  </tr>
+  <tr>
+    <td>Ubicación de parqueaderos por zona</td>
+    <td>Ubicación del usuario NIDOO cliente</td>
+  </tr>
+  <tr>
+    <td>Tarifas de parqueadero</td>
+    <td>Medios de pago</td>
+  </tr>
+  <tr>
+    <td>Ofertas, promociones, cupones</td>
+    <td>Información personal de los usuarios (Clientes, oferentes auxiliares de parqueadero)</td>
+  </tr>
+  <tr>
+    <td>Información de parqueadero: dirección, dimensiones, información de empresa de parqueadero</td>
+    <td>Indicadores clave (PKI) generados por el sistema NIDOO</td>
+  </tr>
+  <tr>
+    <td>Auxiliar de parqueadero o colaborador (Nombres y apellidos): bajo previa autorización</td>
+    <td>Información interna generada por el sistema (Logs, auditoría)</td>
+  </tr>
+  <tr>
+    <td>Nombres y apellidos del cliente con previa autorización</td>
+    <td>Certificados, claves, tokens y cualquier infamación que sea utilizada en la seguridad del sistema.</td>
+  </tr>
+  <tr>
+    <td>Placa, tipo y color del vehículo</td>
+    <td></td>
+  </tr>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<b>Denial of service (Denegación de servicios):</b> En el ajuste del diseño de la arquitectura se agregó un componente de seguridad para el cual se encarga de analizar todas las peticiones hacia los microservicios del sistema Nidoo (Api gateway Kong). Este componente estará a cargo de determinar si se están enviado peticiones con alguna anomalía y se bloquearan inmediatamente.  para más información ver diagrama de arquitectura (mostrar diagrama de arquitectura en modal).
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint45.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+En el modelo anterior observamos que se asigna la protección de ataques al firewall de heroku. Este se encargará de analizar las tramas y monitorear los diferentes ataques de denegación de servicios. No se contemplan todos los tipos de ataques, pero el firewall de heroku es confiable para el monitoreo del tráfico extraño antes de que pueda llegar al api gateway. Este se encargará de procesar las configuraciones de seguridad para enviar información plana a los microservicios.
+
+<div class="subtitle-separator"></div>
+
+<b>Elevation of privilege (Elevación de privilegios):</b> El sistema debe encargarse de otorgar accesos a los componentes autorizados. El no controlar este ataque podría exponer el sistema a que un usuario mal interinado pueda acceder a la información de Nido y alterar su funcionamiento. Para esto se decidido utilizar un componente de autorización. El cual se encargará de probar la identidad de los usuarios que llegan en la solicitud. A partir de esta identificación, el sistema solo concederá acceso a funcionalidades que hayan sido asignadas a determinados roles en el sistema.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint46.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

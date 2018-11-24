@@ -1,0 +1,204 @@
+<div class="component-title">
+  <h1>Estilos Y Tácticas Sprint 04</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección presentamos los estilos y tácticas de arquitecturas que hemos desarrollado durante el transcurso del
+desarrollo de la arquitectura del sistema. Nuestro objetivo es mostrar las razones por la cual hemos tomado los estilos y
+tácticas de arquitectura para el sprint 03 donde trabajamos el atributo de calidad disponibilidad.
+
+<div class="subtitle-separator"></div>
+
+<h5>Estilos De Arquitectura Sprint 04</h5>
+
+<div class="subtitle-separator"></div>
+
+<table>
+  <thead>
+  <tr>
+    <th>Estilo</th>
+    <th>Justificación</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td width="35%">Service-Oriented Architecture</td>
+    <td width="65%">Este estilo se propuso porque nuestro diseño está basado en microservicios, logrando que los componentes de negocios se expongan como servicios, adicional también permite separar lógica y recursos para mejorar el rendimiento.</td>
+  </tr>
+  <tr>
+    <td width="35%">Lambda</td>
+    <td width="65%">	Este estilo se propuso porque a través de microservicios podemos mejorar el rendimiento logrando separar las capas para procesar por lotes con herramientas de consumo de flujo.</td>
+  </tr>
+  <tr>
+    <td width="35%">3-Tier</td>
+    <td width="65%">Este estilo se propuso porque nos permite dividir la aplicación en capas, logrando que la capa de front solo se dedique a renderizar independiente al canal al cual sea consumido, las APIs o microservicios proveen la lógica de los negocios y el modelo de datos que se encarga de la persistencia de la información.</td>
+  </tr>
+  <tr>
+    <td width="35%">Balanceador de carga + Nodos independientes + escalabilidad de almacenamiento</td>
+    <td width="65%">Este estilo se propuso ya que por medio del balanceador nos permite distribuir la carga a las diferentes instancias que ejecutan réplicas de cada uno de los microservicios. Estas instancias son stateless y adicionalmente comparten un cluster de bases de datos escalables horizontal y verticalmente.</td>
+  </tr>
+  <tr>
+    <td width="35%">Microservices Architecture</td>
+    <td width="65%">Este estilo se propuso porque queremos dividir cada componente funcional en servicios autónomos independientes para así dividir la carga y aumentar la cantidad de instancias corriendo sobre los microservicios que lo necesiten.</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+<h5>Tácticas De Arquitectura Sprint 03</h5>
+
+<div class="subtitle-separator"></div>
+
+<table style="width:100%">
+  <tr>
+    <th  scope="col" colspan="2" width="50%">Tactica</th>
+    <th width="50%">Descripcion</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Control de la demanda de recursos</td>
+    <td>Incrementar eficiencia del recursos</td>
+    <td>Esta táctica se propuso porque se pretende lograr la mayor eficiencia de los servicios con los mínimos recursos, para esto contamos con la implementación de microservicios para dividir las cargas y solo incrementar aquellas que requieran y no toda la aplicación en caso de ser un monolito. </td>
+  </tr>
+  <tr>
+    <td>Reducir overhead</td>
+    <td>Esta táctica se propuso porque a través de una estrategia de contenerización nos permiten distribuir la carga de procesamiento logrando que una mayor eficiencia en el procesamiento y consumo de los servicios expuestos.</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Gestionar recursos</td>
+    <td>Mantener múltiples copias de cómputos</td>
+    <td>Esta táctica se propuso porque queremos tener una elasticidad de infraestructura que nos permita crecer horizontal y
+      verticalmente automáticamente, así como también cuando las cargas disminuyan así mismo las capacidades de
+      cómputo para evitar sobrecostos en la operación.
+    </td>
+  </tr>
+  <tr>
+    <td>Mantener múltiples copias de datos</td>
+    <td>Esta táctica se propuso porque uno de los principios fundamentales para mejorar el rendimiento es utilizar caché y
+      esta es una de las ventajas de esta táctica, así como también cabe resaltar que se pueden tener múltiples copias
+      que se utilizaran en modo lectura para agilizar los proceso y no afectar el rendimiento de la base maestra.
+      <br><br>
+      También permite evitar la pérdida de la información si en algún momento se daña alguna de las fuentes de dato,
+      esto debido a que estén diferente copias.
+    </td>
+  </tr>
+  <tr>
+    <td>Log de transacciones</td>
+    <td>Mantener un log de eventos de transacciones</td>
+    <td>Se decidió utilizar esta táctica para mantener un registro de las transacciones de los microservicios de NIDOO.
+      Si se produce un evento que comprometa la disponibilidad del microservicio, es deber de este componente alertar
+      sobre la falla para iniciar procedimientos de recuperación.
+    </td>
+  </tr>
+  <tr>
+    <td>Hardware	con	alta	disponibilidad,	clusters	y	balanceadores	de	carga</td>
+    <td>Active Redundancy + Load Balancing + Stateless Nodes</td>
+    <td>Combinamos estas tres tácticas para estar disponibles aun cuando alguno de los nodos de ejecución se caiga.
+      El load Balancer sigue delegando peticiones a los nodos que sigan activos mientras que el caído se recupera.
+      Es importante que estos nodos sean stateless y que todos interactúen con la misma fuente de datos
+    </td>
+  </tr>
+  <tr>
+    <td>Monitoring</td>
+    <td>Monitoreo de actividades</td>
+    <td>Vamos a estar monitoreando toda la actividad de cada uno de los microservicios con el fin de poder identificar y
+      prevenir fallas que afecten la disponibilidad. Se van a configurar diferentes tipos de alarmas o alertas.
+      Ej. memoria pronto a acabarse en los diferentes servicios, error rate crece más de un porcentaje, throughput se
+      cae radicalmente, latencia se sube radicalmente, etc. Todo con el fin de poder actuar antes de que se materialice
+      el riesgo. También habrá uno o más dashboards para monitorear la actividad del microservicio y así identificar si
+      alguna está tendiendo a presentar alguna falla.
+    </td>
+  </tr>
+  <tr>
+    <td>Identificar soluciones de backup y recuperación de desastres</td>
+    <td>Generación de copias de respaldo de componentes críticos</td>
+    <td>Se establecerán los procedimientos de generación de copias de respaldo de componentes críticos (Reservas y búsquedas)
+      y de los responsables encargados de la restauración de los respaldos para asegurar la continuidad de los microservicios.
+    </td>
+  </tr>
+  <tr>
+    <td>Autoescaling</td>
+    <td>Crecimiento bajo demanda</td>
+    <td>La cantidad de nodos de ejecución crece con base en la demanda bajo unas reglas establecidas con base en el presupuesto y
+      la importancia de la operación. Esto va a evitar que los tiempos de respuesta se suban mucho y que la plataforma se caiga
+      por denegación del servicio.
+    </td>
+  </tr>
+  <tr>
+    <td>Heartbeat</td>
+    <td>Validación del los servicios en un determinado tiempo</td>
+    <td>Se va a configurar un cron job que va a validar cada X tiempo que el servicio esté respondiendo como debe y de lo
+      contrario, notificar para poder corregir la falla lo antes posible
+    </td>
+  </tr>
+  <tr>
+    <td>Exception Handling</td>
+    <td>Gestión de excepciones del sistema</td>
+    <td>Todos los servicios deben tener un fallback por si algo cambia. Esto es más importante cuando se hace refactor de
+      los servicios o se cambia la implementación de uno de ellos. La idea es manejar la excepción como es debido,
+      loggear el error y responder con un fallback.
+    </td>
+  </tr>
+  <tr>
+    <td>Detect attacks</td>
+    <td>Detect service denial</td>
+    <td>Se va a identificar patrones comunes de denegación de servicios utilizando técnicas como TCP Sync cookies y connection rate limit. También identificando que el ancho de banda interno no supere la capacidad del ancho de banda del carrier de internet. </td>
+  </tr>
+  <tr>
+    <td>Spoofing and Sniffing Protections</td>
+    <td></td>
+    <td>Las siguientes medidas se toman en heroku:
+      “Managed firewalls prevent IP, MAC, and ARP spoofing on the network and between virtual hosts to ensure spoofing is not possible. Packet sniffing is prevented by infrastructure including the hypervisor which will not deliver traffic to an interface which it is not addressed to.  Heroku utilizes application isolation, operating system restrictions, and encrypted connections to further ensure risk is mitigated at all levels.”</td>
+  </tr>
+  <tr>
+    <td>Port Scanning</td>
+    <td></td>
+    <td>Heroku toma las siguientes medidas:
+      “Port scanning is prohibited and every reported instance is investigated by our infrastructure provider.  When port scans are detected, they are stopped and access is blocked.”</td>
+  </tr>
+  <tr>
+    <td rowspan="8">Resiste attacks</td>
+    <td>Identify actors</td>
+    <td>Todas las acciones ejecutadas por alguno de los componentes dentro de nuestra arquitectura van a ser registradas en un Log para poder hacer auditoria en el futuro. Cada log va a estar asociada a un actor u usuario para darle trazabilidad al ataque.</td>
+  </tr>
+  <tr>
+    <td>Authenticate actors</td>
+    <td>Todos los actores dentro y fuera del sistema, va a tener que autenticarse con OAuth 2.0 para evitar el spoofing y otros problemas relacionados con la autenticación. También va a haber un servidor exclusivamente para actualizar el token de autenticación, favoreciendo así la latencia y escalabilidad.</td>
+  </tr>
+  <tr>
+    <td>Authorize actors</td>
+    <td>Con base en una tabla RACI, se definen políticas de acceso para cada uno de los actores identificados con el fin de evitar accesos no autorizados.</td>
+  </tr>
+  <tr>
+    <td>Limit access</td>
+    <td>Se definen accesos muy concisos para cada uno de los actores involucrados con el fin de limitar el uso de servicios. </td>
+  </tr>
+  <tr>
+    <td>Limit exposure</td>
+    <td>Sólo se va a exponer 1 punto de salida público, el API Gateway, que muestra únicamente los servicios que queremos tener públicos. El resto de microservicios van a estar en una red privada o un private space, que sería nuestra “zona segura”. De igual manera, cada microservicio únicamente expone su api pública por un puerto para limitar el acceso. </td>
+  </tr>
+  <tr>
+    <td>Encrypt data</td>
+    <td>Toda la comunicación va a ir encriptada con SSL y los datos más sensibles, como las contraseñas de los usuarios, van a ser encriptadas en base de datos.</td>
+  </tr>
+  <tr>
+    <td>Separate entities</td>
+    <td>Al ser una arquitectura orientada a microservicios, se encuentra toda la data separada y autocontenida. De esa manera si algo si algún servicio se ve comprometido, no se cae el resto del sistema. Se puede aislar el microservicio con el problema y recuperarse del ataque.</td>
+  </tr>
+  <tr>
+    <td>Change default Settings</td>
+    <td>Van a haber políticas claras para el manejo de contraseñas como por ejemplo la autenticación de dos pasos o multi factor (MFA)</td>
+  </tr>
+  <tr>
+    <td rowspan="2">React to attacks</td>
+    <td>Revoke access</td>
+    <td>Al identificar acciones fraudulentas sobre el sistema, éste revoca accesos automáticamente al actor involucrado para evitar más ataques </td>
+  </tr>
+  <tr>
+    <td>Inform actors</td>
+    <td>Después de una acción sensible, como por ejemplo cambiar tarifas de los parqueaderos, se le notifica a los actores interesados en la seguridad para que puedan autorizar o realizar alguna acción para evitar un ataque.</td>
+  </tr>
+</table>
+<!-- hace als categorias de tacticas -->

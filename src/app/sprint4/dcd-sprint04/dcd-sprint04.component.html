@@ -1,0 +1,26 @@
+<div class="component-title">
+  <h1>Decisiones Críticas De Diseño Sprint 04</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+Para buscar favorecer la seguridad tomamos algunas decisiones críticas en el diseño de nuestra arquitectura. Se decidió encapsular los microservicios en una red privada o como Heroku lo llama, un private space (https://elements.heroku.com/addons/heroku-private-spaces). De esa manera, nadie fuera de esa red puede tener accesos a los microservicios aparte de otro componente clave: un API Gateway. Este se va a encargar de consumir y filtrar todas las solicitudes hechas a los microservicios con el fin de protegerlos y de reducir la superficie de ataque.
+
+<div class="subtitle-separator"></div>
+
+En este momento el API Gateway (Kong: https://konghq.com/kong-community-edition/) se convierte en un punto sensible ya que es la entrada principal a nuestro sistema. Por eso es que se su acceso y configuración va a ser restringido lo más que se pueda para evitar posibles cambios inesperados.
+
+<div class="subtitle-separator"></div>
+
+También se agregó otro componente adicional, un servidor de autenticación, con su propia fuente de datos cuya única función va a ser resolver los permisos y refrescar el token de autenticación. De esa manera desacoplamos un poco la autenticación de la autorización y evitamos tener un solo punto de fallo.
+
+<div class="subtitle-separator"></div>
+
+Por el otro lado, los logs y demás componentes ingresados en la etapa de disponibilidad también ayudan a evitar que el sistema se vea comprometido en su totalidad en el caso de un ataque y ayuda a mantener disponible el servicio en todo momento. También ayuda a que el servicio pueda recuperarse en caso de que alguna amenaza se materialice.
+
+<div class="subtitle-separator"></div>
+
+<h5>Punto De Sensibilidad</h5>
+
+El punto de sensibilidad a probar es el API Gatewey, entrada principal al sistema.

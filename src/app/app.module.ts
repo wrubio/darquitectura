@@ -61,6 +61,12 @@ import { ViewDevelopComponent } from './view-develop/view-develop.component';
 import { OperationViewComponent } from './operation-view/operation-view.component';
 import { AsrsSecurityComponent } from './sprint4/asrs-security/asrs-security.component';
 import { DarqSecurityComponent } from './sprint4/darq-security/darq-security.component';
+import { DcdSprint04Component } from './sprint4/dcd-sprint04/dcd-sprint04.component';
+import { SytSprint04Component } from './sprint4/syt-sprint04/syt-sprint04.component';
+import { DexpSprint04Component } from './sprint4/dexp-sprint04/dexp-sprint04.component';
+import { RexpSprint04Component } from './sprint4/rexp-sprint04/rexp-sprint04.component';
+import { AycSprint04Component } from './sprint4/ayc-sprint04/ayc-sprint04.component';
+import { Retro4Component } from './sprint4/retro4/retro4.component';
 
 
 const appRoutes: Routes = [
@@ -388,6 +394,42 @@ const appRoutes: Routes = [
         data: {
           breadcrumb: 'Diseño de arquitectura Sprin 04'
         },
+      },
+      {
+        path: 'dcdSprint04', component: DcdSprint04Component,
+        data: {
+          breadcrumb: 'Decisiones criticas de diseño Sprin 04'
+        },
+      },
+      {
+        path: 'sytSprint04', component: SytSprint04Component,
+        data: {
+          breadcrumb: 'Estilos y tácticas Sprin 04'
+        },
+      },
+      {
+        path: 'dexpSprint04', component: DexpSprint04Component,
+        data: {
+          breadcrumb: 'Diseño experimiento Sprin 04'
+        },
+      },
+      {
+        path: 'rexpSprint04', component: RexpSprint04Component,
+        data: {
+          breadcrumb: 'Resultados experimiento Sprin 04'
+        },
+      },
+      {
+        path: 'aycSprint04', component: AycSprint04Component,
+        data: {
+          breadcrumb: 'Análisis y conclusiones experimento Sprin 04'
+        },
+      },
+      {
+        path: 'retroSprint04', component: Retro4Component,
+        data: {
+          breadcrumb: 'Retrospectiva Sprin 04'
+        },
       }
     ],
   }
@@ -450,7 +492,13 @@ const appRoutes: Routes = [
     ViewDevelopComponent,
     OperationViewComponent,
     AsrsSecurityComponent,
-    DarqSecurityComponent
+    DarqSecurityComponent,
+    DcdSprint04Component,
+    SytSprint04Component,
+    DexpSprint04Component,
+    RexpSprint04Component,
+    AycSprint04Component,
+    Retro4Component
   ],
   imports: [
     BrowserModule,

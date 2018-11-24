@@ -1,0 +1,79 @@
+<div class="component-title">
+  <h1>Diseño Del Experimento Sprint 04</h1>
+  <div class="line-component-title"></div>
+</div>
+
+<div class="title-separator"></div>
+
+En esta sección deseamos determinar si las decisiones de arquitecturas tomadas hasta el momento van por el camino que
+deseamos, para esto presentaremos el diseño del experimento del sprint 04 que está enfocado en el atributo de calidad de seguridad.
+
+<div class="subtitle-separator"></div>
+
+<h4>Diseño Del Experimento</h4>
+
+<div class="subtitle-separator"></div>
+
+<table width="100%">
+  <tr>
+    <th colspan="2">Pruebas De Estilos Y Tácticas De Disponiblidad Proyecto NIDOO</th>
+  </tr>
+  <tr>
+    <td><b>Propósito</b></td>
+    <td>
+      Este experimento pretende satisfacer las necesidades de los usuarios definidas en las ASRs 08, 13, 23 y 24 que a través de las
+      tácticas definidas para el diseño de la arquitectura favorezca la seguridad de los componentes del sistema en cuanto a integridad,
+      disponibilidad, confidencialidad y confidencialidad.
+    </td>
+  </tr>
+  <tr>
+    <td><b>Resultados esperados</b></td>
+    <td>
+      Se espera que al finalizar el experimento se evalué el funcionalmente las decisiones de diseño para satisfacer la seguridad de los componentes de Nidoo minimizando el tradeoff entre los atributos de calidad implementados en los sprint anteriores.
+      <br><br>
+      También se espera que el sistema sea capaz de detectar, resistir, reaccionar a ataques e iniciar un procedimiento de recuperación. Para esto se probarán distintos ataques en el experimento para evaluar detalladamente el comportamiento de los componentes y si es necesario afinar la arquitectura hasta tener la mejor versión posible.
+      <br><br>
+      Analizar el comportamiento de los microservicios al generar un ataque que comprometa la integridad en cuanto la modificación de tarifas de parqueadero. Para esto, de manera intencional y simulando un atacante, cambiaremos una tarifa de parqueadero sin ser autorizados y verificar si el sistema es capaz de revocar el ataque y notificar los stakeholders delegados y si es necesario. Iniciar un procedimiento de recuperación.
+    </td>
+  </tr>
+  <tr>
+    <td><b>Recursos requeridos</b></td>
+    <td>
+      <ul>
+        <li><b>Plataforma como servicio (PaaS):</b> Heroku </li>
+        <li>mLab MongoDB</li>
+        <li>Mongoose</li>
+        <li>Angular</li>
+        <li>NodeJS</li>
+        <li>SoapUI</li>
+        <li>New Relic</li>
+        <li>Hardware: Ubuntu 18.x con 518MB RAM</li>
+        <li>RabbitMQ</li>
+        <li>Apollo server</li>
+        <li>Monitoring</li>
+        <li>Logs component</li>
+        <li>Api gateway</li>
+        <li>Authorization server</li>
+        <li>Heroku firewall</li>
+        <li>Auditoria (MongoDB)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td><b>Elementos de arquitectura involucrados</b></td>
+    <td>
+      Los nuevos elementos de arquitectura involucrados para aplicar tácticas de seguridad y así mismos la integridad, confidencialidad y disponibilidad se decidió utilizar un servidor de autorización, el cual estará encargado de la gestión de tokens para la autorización de usuarios. En Heroku firewall se definirán reglas específicas de acceso a través de una sola IP y puerto para garantizar una sola vía de acceso por microservicio. Un api gateway (Kong), el cual estará encargado de recibir solicitudes con protocolos seguros (TLS, SSL) y direccionarlos a los respectivos microservicios. Se definirán disparadores (Triggers) en MongoDB, los cuales se ejecutarán cuando se generen eventos de tipo on-Update, on-Delete y se almacenarán en una tabla para mantener una bitácora de los eventos del microservicio.
+      <br><br>
+      Durante el experimento se afectarán las siguientes vistas:
+      <br><br>
+      <ul>
+        <li> Funcional, información, concurrencia, operación, desarrollo y despliegue. Para visualizar las nuevas
+          vistas por favor seguir el siguiente link: <a href="#" routerLink="/darqSprint04">Diseño de arquitectura</a></li>
+      </ul>
+     </td>
+  </tr>
+  <tr>
+    <td><b>Esfuerzo Estimado</b></td>
+    <td>Se estima que el tiempo a dedicar para la construcción del experimento, teniendo en cuenta la curva de aprendizaje de las nuevas tecnologías, es de 4 horas diarias por 3 desarrolladores en 1 semana.</td>
+  </tr>
+</table>

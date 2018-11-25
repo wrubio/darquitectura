@@ -134,3 +134,95 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
+
+<h4>5.5.4.3. Seguridad</h4>
+<div class="subtitle-separator"></div>
+
+<h5>5.5.4.3.1. Modelo De Despliegue</h5>
+
+<p class="text">
+  Se especifican asignaciones de ejecución para los diferentes componentes considerando latencia, escalabilidad, disponibilidad y Seguridad:
+</p>
+
+<table>
+  <tbody>
+  <tr>
+    <td width="20%"><b>Cluster Cache: </b></td>
+    <td width="80%">Contendrá instancias de bases de datos para manejar caching de los datos y evitar llamadas innecesarias a la base de datos.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Cluster MQ: </b></td>
+    <td width="80%">Dispondrá colas de mensajería para el almacenamiento de los mensajes entre el componente payment microservice y la pasarela de datos. de esta forma evitamos perdida de mensajes y se podrá asignar tiempos para que sean atendidos os mensajes y mejorar e rendimiento, Las conexiones de este componente son tipo MQ</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Heroku: </b></td>
+    <td width="80%">Contendrá instancias del microservicio de pagos ejecutadas sobre NodeJS y el orquestador de microservicios.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Apollo server: </b></td>
+    <td width="80%">Instancia para orquestar la ejecución de lo microservicios.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Clúster MongoDB: </b></td>
+    <td width="80%">Contendrá instancias de bases de datos MongoDB.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Logs (Logentries):</b></td>
+    <td width="80%">Almacenara los logs generados por el microservicio para tener detalle de los eventos generados y controlar sus fallas.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>New Relic:</b></td>
+    <td width="80%">Se encarga del monitoreo de los eventos transaccionales entrantes al microservicio. Se incluye para monitorear el estado del microservicio antes de su ejecución.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Apollo engine:</b></td>
+    <td width="80%">Se encarga del monitoreo de enrutador de microservicios. Se incluye en el servicio para determinar si el resolver (Apollo server) se convierte en un punto de falla.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Message provider:</b></td>
+    <td width="80%">Es un proveedor de mensajes que se utilizará para enviar alertas de posibles fallos del microservicio.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>API Gateway</b></td>
+    <td width="80%">Este se va a encargar de consumir y filtrar todas las solicitudes hechas a los microservicios con el fin de protegerlos y de reducir la superficie de ataque.</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Servidor De Autenticación</b></td>
+    <td width="80%">Servidor que resuelve los permisos y refresca el token de autenticación</td>
+  </tr>
+  <tr>
+    <td width="20%"><b>Users Caché (New Relic)</b></td>
+    <td width="80%">Sistema de motorización de maquinas que permite tener un control en tiempo real de los recursos disponibles..</td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="subtitle-separator"></div>
+
+A nivel de infraestructura, los componentes pueden escalar vertical y horizontalmente ya que la cantidad de instancias aumentan dinámicamente dependiendo de la demanda y otros parámetros configurables en heroku. Las bases de datos y los caches son clusters y cada uno de los microservicios está detrás de un load balancer para balancear la demanda y favorecer la escalabilidad y la disponibilidad.
+<br><br>
+Se asigna un cluster de bases de datos no relacionales MongoDB con RAM Variable con alrededor de 1GB de almacenamiento. Estos son escalan horizontal y verticalmente dependiendo de la demanda. El cluster lo va a proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB. Este también escala con base en la demanda.
+<br><br>
+los componentes de monitoreo (Apollo engine y New Relick) se incluyeron para reportar estados transaccionales y de ejecición de los microservicios. Dependiendo de los eventos se generarán alertas que indicarán una posible falla de los microservicios que afecte su disponibilidad. La asignación de estos componentes estará sujeto a un plan de pagos para los proveedores. Los planes incluyen la disponibilidad de los sistemas.
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Despliegue</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/payment/funcionalReferencias.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/payment/payc2.png" alt="Vista funcional microservicio Payment" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>

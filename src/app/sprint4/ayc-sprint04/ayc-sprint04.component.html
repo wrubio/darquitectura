@@ -10,8 +10,12 @@ definimos para el sprint 04 y que están enfocado en el atributo de calidad de s
 
 <div class="subtitle-separator"></div>
 
-<h4>Análisis Y Conclusiones Del Experimento De Escalabilidad</h4>
+<h4>Análisis Y Conclusiones Del Experimento De Seguridad</h4>
 
 <br>
 
-En desarrollo
+Una vez terminado el experimento consideramos que los resultados fueron satisfactorios y se va a dejar la arquitectura como está. Tener todos nuestros servicios detrás del API Gateway nos da la ventaja de reducir la superficie expuesta a ataque lo menor posible. Se pueden agregar todo tipo de mecanismos o plugins para protegerse de los ataques más comunes y establecer un set de reglas para evitar que se filtre algo que no estemos esperando.
+<br><br>
+En el experimento es evidente que se está pensando en tener redundancia sobre los servicios más críticos para siempre llevar auditoria de quién y cuándo se hizo una modificación. Todo para tener trazabilidad y visibilidad de lo que está sucediendo y evitar ataques bien o mal intencionados. Se están tomando las medidas necesarias para que la empresa pueda reaccionar oportunamente a cambios no autorizados.
+Por último podemos ver que la medidas de seguridad no interfieren drásticamente con el desempeño del sistema y su normal operación.
+

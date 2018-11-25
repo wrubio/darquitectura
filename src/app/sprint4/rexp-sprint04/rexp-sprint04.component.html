@@ -14,4 +14,64 @@ sprint 04 y que están enfocados en el atributo de calidad de Seguridad.
 
 <div class="subtitle-separator"></div>
 
-En desarrollo
+Para el experimento se montó y configuró un API Gateway (Kong), se creó un nuevo microservicio payments con un nuevo servicio POST /zonefee, que se encarga de agregar una nueva tarifa para una zona en particular, y se subió a Heroku para hacer las pruebas. También se aprovisionó de un proveedor de Mail llamado Sendgrid, MongoLab para la base de datos y LogEntries para manejo de logs. Todo esto con el fin de probar que el cambio de estas tarifas, al ser una operación sensible, sólo personas autorizadas y por medio del servicio expuestos pueden hacerlo. Igualmente de haberlo cambiado por una persona con acceso, quedaría registro en los logs para auditoria y darle trazabilidad al cambio. A parte debe quedar un registro adicional en la base de datos y si por algún motivo quien tenga acceso directo a la base de datos hace el cambio sobre la colección, la base de datos dispara un trigger con un correo notificando de los cambios realizados. A parte el servicio envía una notificación para que haya redundancia por si alguno de los mecanismos instaurados llega a ser vulnerado.
+<br><br>
+A continuación, se muestran pantallazos del trabajo realizado:
+<br><br>
+En esta imagen se evidencia que el servicio tiene que ir decorado con un apikey específico que sirve para autenticar y autorizar al usuario que está haciendo el cambio. También vemos que siempre se crea una nueva entrada y no se modifica la actual para dejar siempre registro de quién y cuándo se hizo el cambio.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint47.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Por otra parte, la siguiente imagen muestra que también se deja un log descriptivo para dejar registro de la nueva entrada y poderle hacer auditoría si algo llegase a suceder.
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint48.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+La anterior imagen muestra el log en LogEntries, pero además se puede evidenciar que queda registro en los logs de Heroku para que haya redundacia.
+
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint49.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+Si por algún motivo alguien autorizado o no hace el cambio a través del servicio y haciendo la modificación directamente en la base de datos, se notifica a los interesados por medio de un email para dar visibilidad y poder responder en caso de que el cambio no haya sido autorizado.
+
+
+<div class="subtitle-separator"></div>
+
+<div class="img1">
+  <img src="./assets/img/sprint4/sprint410.png" alt="diagrama Componente Conector" width="90%">
+</div>
+
+<div class="subtitle-separator"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

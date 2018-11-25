@@ -89,7 +89,7 @@ Microservicio encargado de hacer las consultas de los parqueaderos por diferente
 <h5>5.2.2.3.1. Modelo Componente Conector</h5>
 
 <p class="text">
-  En desarrollo
+  Para favorecer la disponibilidad de software en el microservicio de búsquedas se decidió incluir componentes que permitan monitorear su estado transaccional a través de un monitor (Apollo engine) que está midiendo el comportamiento de las solicitudes que llegan al enrutador de microservicios (Apollo server) para que, según los umbrales de concurrencia generará una alerta para iniciar labores de prevención (Habilitar instancias adicionales) o de recuperación (Indicar al resolver cuales son las instancias habilitadas después de la falla total del microservicio). La inclusión del componente de logs permitirá evaluar el comportamiento en ejecución del microservicio para que en caso de que se presenten determinadas fallas, se generen alertas para iniciar labores de recuperación o de prevención. Estas alertas se enviarán a través de un componente de mensajes (Sendgrid) a las personas encargadas de la administración del sistema.
 </p>
 
 <table>

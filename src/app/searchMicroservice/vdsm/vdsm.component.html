@@ -81,4 +81,39 @@
   </tr>
 </table>
 
+<div class="subtitle-separator"></div>
 
+<h4>5.5.2.3. Seguridad</h4>
+<div class="subtitle-separator"></div>
+
+<h5>5.5.2.3.1. Modelo De Asignación</h5>
+
+<p class="text">
+  A nivel de infraestructura, los componentes pueden escalar vertical y horizontalmente ya que la cantidad de instancias aumentan dinámicamente dependiendo de la demanda y otros parámetros configurables en heroku. Las bases de datos y los caches son clusters y cada uno de los microservicios está detrás de un load balancer para balancear la demanda y favorecer la escalabilidad y la disponibilidad.
+  <br><br>
+  Se asigna un cluster de bases de datos no relacionales MongoDB con RAM Variable con alrededor de 1GB de almacenamiento. Estos son escalan horizontal y verticalmente dependiendo de la demanda. El cluster lo va a proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB. Este también escala con base en la demanda.
+  <br><br>
+  los componentes de monitoreo (Apollo engine y New Relick) se incluyeron para reportar estados transaccionales y de ejecición de los microservicios. Dependiendo de los eventos se generarán alertas que indicarán una posible falla de los microservicios que afecte su disponibilidad. La asignación de estos componentes estará sujeto a un plan de pagos para los proveedores. Los planes incluyen la disponibilidad de los sistemas.
+</p>
+
+<div class="subtitle-separator"></div>
+
+<table class="table-diagrama">
+  <tr>
+    <th>Convenciones</th>
+    <th>Diargrama - Modelo De Asignación</th>
+  </tr>
+  <tr>
+    <td width="20%">
+      <div class="img1">
+        <img src="./assets/img/user/user2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+        <img src="./assets/img/user/user4.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+    <td width="80%">
+      <div class="img1">
+        <img src="./assets/img/search/imgsec2.png" alt="Vista De Despliegue microservicio Search" width="90%">
+      </div>
+    </td>
+  </tr>
+</table>

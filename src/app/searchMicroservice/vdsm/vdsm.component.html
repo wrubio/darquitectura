@@ -89,11 +89,17 @@
 <h5>5.5.2.3.1. Modelo De Asignación</h5>
 
 <p class="text">
-  A nivel de infraestructura, los componentes pueden escalar vertical y horizontalmente ya que la cantidad de instancias aumentan dinámicamente dependiendo de la demanda y otros parámetros configurables en heroku. Las bases de datos y los caches son clusters y cada uno de los microservicios está detrás de un load balancer para balancear la demanda y favorecer la escalabilidad y la disponibilidad.
+  En este modelo ya hacemos evidente dónde va a estar alojado cada uno de los componentes del microservicio y cómo éstos se van a comunicar.
   <br><br>
-  Se asigna un cluster de bases de datos no relacionales MongoDB con RAM Variable con alrededor de 1GB de almacenamiento. Estos son escalan horizontal y verticalmente dependiendo de la demanda. El cluster lo va a proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB. Este también escala con base en la demanda.
+  El API management va a ser el único punto de contacto para exponer servicios HTTP, debido a que este nos ofrece la interconexión de módulos y aplicaciones, facilitando el acceso a sus backends y permitiendo la reutilización de servicios. Esta instancia serán dynos standard de heroku que corren Ubuntu 18.x y tienen alrededor de 512MB de RAM.
   <br><br>
-  los componentes de monitoreo (Apollo engine y New Relick) se incluyeron para reportar estados transaccionales y de ejecición de los microservicios. Dependiendo de los eventos se generarán alertas que indicarán una posible falla de los microservicios que afecte su disponibilidad. La asignación de estos componentes estará sujeto a un plan de pagos para los proveedores. Los planes incluyen la disponibilidad de los sistemas.
+  El resolver Apollo Server va a correr en 1 o 3 instancias dependiendo de la demanda. Este se comunica resuelve el query comunicándose con el microservicio de búsqueda de parqueaderos mediante RESTful requests. El microservicio de usuario también va a estar corriendo de 1 a 3 instancia dependiendo de la demanda. Estas instancias serán dynos standard de heroku que corren Ubuntu 18.x y tienen alrededor de 512MB de RAM cada uno.
+  <br><br>
+  Por el otro lado, se tiene un cluster de bases de datos no relacionales MongoDB con RAM Variable con alrededor de 1GB de almacenamiento. Estos son escalan horizontal y verticalmente dependiendo de la demanda. El cluster lo va a proveer mLab. Como caché, se va a usar un cluster de instancias de Redis con un 1 Proxy server y un bucket size de 500MB. Este también escala con base en la demanda.
+  <br><br>
+  Como parte de la solución para enrutar y gestionar el tráfico del crecimiento horizontal tenemos Load Balancing que nos permite enrutar los requests de los clientes a las diferentes instancias la cual vamos a crecer a medida del volumen de carga al cual vamos a estar operando.
+  <br><br>
+  Otros dos sistemas fundamentales que llegan a hacer parte de la solución es la utilización del monitoreo continúo apoyados de new relic y log de eventos apoyados de elasticsearch, esto con el fin de asegurar el correcto funcionamiento del microservicio y sus componentes en tiempo de ejecución, estos sistemas los adicionamos para que sirvieran de apoyo en la identificación de la salud y el rendimiento de los recursos en ejecución.
 </p>
 
 <div class="subtitle-separator"></div>

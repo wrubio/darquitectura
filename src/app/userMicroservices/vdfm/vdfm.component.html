@@ -86,9 +86,11 @@
 <h5>5.2.5.1.3.1. Modelo Component Conector</h5>
 
 <p class="text">
-  En este modelo incluimos los componentes para el monitoreo del microservicio de pagos. se incluyeron monitores de actividad transaccional y de gestión de logs. Estos componentes permitirán almacenar, alertar y estar atento ante las fallas producidas por el microservicio y de esta forma tomar decisiones respecto a prevención, recuperación y continuidad de la operación de reservas de Nidoo.
+  En este modelo utilizamos un nuevo componente del microservicio de usuarios de parqueaderos con el objetivo de conseguir la seguridad establecida dentro de los ARS, para esto contamos con un componente de API Management que nos ofrece un punto único centralizado para exposición de servicios, además como una de las bondades este componente nos ofrece el manejo de la seguridad de API´s por medio de OAUTH 2.0 (framework) que proporciona flujos de autorización que le permite a las aplicaciones obtener acceso limitado a los servicio REST/HTTP,  adicional a esto los componentes que hacen parte de la solución interna o que están detrás del API se encuentran dentro de private space para evitar que los componentes puedan ser vistos públicamente asegurando que el único punto de contacto hacia componentes externos va a ser a través del API Management.
   <br><br>
-  La disponibilidad de este microservicio debe ser igual al servicio de búsquedas. dado que estos representarán la mayor parte de la operación de Nidoo.
+  También se agregó otro componente adicional, un servidor de autenticación, con su propia fuente de datos cuya única función va a ser resolver los permisos y refrescar el token de autenticación. De esa manera desacoplamos un poco la autenticación de la autorización y evitamos tener un solo punto de fallo.
+  <br><br>
+  Por el otro lado, los logs y demás componentes ingresados en la etapa de disponibilidad también ayudan a evitar que el sistema se vea comprometido en su totalidad en el caso de un ataque y ayuda a mantener disponible el servicio en todo momento. También ayuda a que el servicio pueda recuperarse en caso de que alguna amenaza se materialice.
 </p>
 
 <div class="subtitle-separator"></div>

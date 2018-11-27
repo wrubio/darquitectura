@@ -14,6 +14,21 @@ directamente el diseño general de la arquitectura, para esto se ha tenido en cu
 
 <div class="subtitle-separator"></div>
 
+Para probar tácticas de seguridad decidimos utilizar el microservicio de pagos de reservas de parqueaderos (Payment)
+debido a que pertenecen a los ASR más importantes para el negocio y la misión de Nidoo. Al implementar el componente de API
+management y colocando un private space para proteger a los componentes internos de los microservicios podremos reducir la
+superficie de ataque debido a que este va a ser el único punto de entrada a los servicios HTTP, además este componente nos
+permite a través de un servidor de autorización validar los accesos a los usuarios del sistema. Los resultados nos permitirán
+saber hasta qué punto estamos asegurando la información confidencial de los usuarios protegiéndolos de los posibles ataques o
+fraudes, para proteger los datos de tarifas que es un punto sensible en el sistema, vamos a colocarle auditoria por medio
+de 3 factores: el primer factor es encriptar los datos del mensaje por medio de un hash para evitar ver en claro la
+información, el segundo factor es disparar un trigger que se va a encargar de mandar el cambio de tarifa  a un log  y a
+una tabla de la base de datos con los valores originales y cambiados y el tercer factor es notificar vía correo electrónico
+a un responsable para controlar desde negocio los cambios registrados. Finalmente concluimos que con este diseño podemos
+disminuir los fraudes a los valores críticos del sistema tanto internamente como externamente.
+
+<div class="subtitle-separator"></div>
+
 <table>
   <tr>
     <th>Convenciones</th>
